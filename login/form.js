@@ -4,6 +4,8 @@ var form = document.getElementById('form');
     password = form.password;
     error = document.getElementById('error');
 
+
+// funcion que valida si se pusieron caracteres en el nombre 
 function validateName (e){
     if (nameUs.value == '' || nameUs.value == null){
         error.style.display = 'block';
@@ -17,6 +19,7 @@ function validateName (e){
     }
 }
 
+//Funcion que valida si se pusieron caracteres en la contraseña
 function validatePassword (e){
     if (password.value == '' || password.value == null){
         error.style.display='block';
