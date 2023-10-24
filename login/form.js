@@ -30,7 +30,7 @@ function validatePassword (e){
     }
 }
 
-//,funcion que se encarga de validar los campos 
+//funcion que se encarga de validar los campos 
 function  validateForm(e){
     //reinicio el error para que inicie sin mensaje
     error.innerHTML='';
