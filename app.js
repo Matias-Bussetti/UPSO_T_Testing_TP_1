@@ -95,11 +95,12 @@ class LocalStorageInterface {
 class DomManipulator {
   static onWindowLoad() {
     this.formStudentAddEvents();
+    this.listStudentsFromStorage();
   }
 
   static formStudentAddEvents() {
     var formStudent = document.getElementById("form-student");
-    formStudent.onclick = (e) => {
+    formStudent.onsubmit = (e) => {
       e.preventDefault();
 
       var student = new Student(
@@ -144,11 +145,50 @@ class DomManipulator {
 
     var collectionOfStudents = LocalStorageInterface.getCollection("students");
 
+    let counterIdLiElement = 0;
+
     collectionOfStudents.forEach((student) => {
       var newListElement = document.createElement("li");
 
-      newListElement.innerText = JSON.stringify(student);
+      newListElement.id = "li-student-" + counterIdLiElement++;
+
+      var studentToArrayOfKeyAttributes = Object.entries(student);
+
+      studentToArrayOfKeyAttributes.forEach((attribute) => {
+        newListElement.dataset[attribute[0]] = attribute[1];
+
+        var newAttributeElement = document.createElement("span");
+
+        newAttributeElement.innerText =
+          " | " + attribute[0] + ": " + attribute[1];
+        newListElement.appendChild(newAttributeElement);
+      });
+
       listStudents.appendChild(newListElement);
+
+      var buttonEditStudent = document.createElement("button");
+
+      //Buscamos el form
+
+      buttonEditStudent.onclick = () => {
+        this.fillFormStudent(student);
+      };
+      buttonEditStudent.innerText = "edit";
+      listStudents.appendChild(buttonEditStudent);
+    });
+  }
+
+  static fillFormStudent(student) {
+    var formStudent = document.getElementById("form-student");
+    Object.entries(student).forEach((attribute) => {
+      if (formStudent[attribute[0]]) {
+        if (formStudent[attribute[0]].type == "checkbox") {
+          formStudent[attribute[0]].checked = attribute[1];
+        } else {
+          console.log(formStudent[attribute[0]], attribute[1]);
+          formStudent[attribute[0]].value = attribute[1];
+        }
+      }
     });
   }
 }
