@@ -1,5 +1,56 @@
 * {
-  background-color: #000;
+  /* background-color: #000; */
+  /* color: #fff; */
+  /* border-color: #fff; */
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(37, 37, 37);
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
+}
+
+.conteiner {
+  width: 400px;
+  /*margin: 40px auto;*/
+  margin: 40px;
+}
+
+.form .conteiner-inputs {
+  padding: 20px;
+  background: #fff;
+  border-radius: 6px 6px 0 0;
+}
+.form input[type="text"],
+.form input[type="password"] {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
+}
+.form .btn {
+  width: 100%;
+  text-align: center;
+  background: #246eb9;
   color: #fff;
-  border-color: #fff;
+  border: none;
+  display: block;
+  padding: 15px 10px;
+  cursor: pointer;
+  border-radius: 0 0 6px 6px;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
+}
+
+.form .btn:hover {
+  background: #4357ad;
 }
