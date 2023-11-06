@@ -139,9 +139,25 @@ export class LocalStorageInterface {
       ? JSON.parse(localStorage.getItem(storageKeyName))
       : [];
   }
+
+  static deleteCollection(storageKeyName) {
+    localStorage.removeItem(storageKeyName);
+  }
 }
 
 export class Auth {
+  static checkLogin() {
+    const auth = LocalStorageInterface.getCollection("auth");
+    console.log("auth", auth, auth.length);
+    if (auth.length == 0) {
+      window.location.href = "/login";
+    }
+  }
+
+  static logout() {
+    LocalStorageInterface.deleteCollection("auth");
+  }
+
   static login(username, password) {
     const students = LocalStorageInterface.getCollection("students");
 
@@ -149,8 +165,8 @@ export class Auth {
 
     if (username == "admin" && password == "c0ntr4s3ñ4") {
       LocalStorageInterface.storeCollection(
-        "auth",
-        JSON.stringify({ userId: -1, type: "admin" })
+        JSON.stringify({ userId: -1, type: "admin" }),
+        "auth"
       );
       window.location.href = "/admin";
       return true;

@@ -1,4 +1,4 @@
-import { LocalStorageInterface, Student } from "../app";
+import { LocalStorageInterface, Student } from "../app.js";
 
 export class DomManipulator {
   static onWindowLoad() {
