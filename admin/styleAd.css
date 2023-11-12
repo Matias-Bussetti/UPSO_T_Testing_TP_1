@@ -47,6 +47,16 @@ h1{
 	text-align: center;
 	color:white;
 }
+.form input[type="date"]{
+    background-color: #000000;
+    padding: 13px;
+    font-family: "Roboto Mono",monospace;
+    color: #ffffff;
+    font-size: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
 .form .conteinerInputs{
 	width: 1000px;
 	/*margin: 40px auto;*/
@@ -70,12 +80,12 @@ h1{
 }
 .content-select select{
 	display: inline-block;
-	width: 100%;
+	width: 50%;
 	cursor: pointer;
-	border: 0.5px solid #226fc1;;
+	border: 0.5px solid #18191a;;
 	/*border-color: #226fc1;*/
 	background:white;
-	color:#226fc1;
+	color:#000000;
 	font-size: 1em;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	border-radius: 10px;
