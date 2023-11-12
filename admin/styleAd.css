@@ -11,6 +11,39 @@ body {
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
 }
+.menu{
+    background: #092327;
+    list-style: none;
+    padding: 0px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a{
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    padding: 20px;
+}
+
+.menu li a:hover{
+    background: #ef8354;
+}
+.container{
+	background: #092327;
+    list-style: none;
+    padding: 0px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
 .form .conteinerInputs{
 	width: 1000px;
 	/*margin: 40px auto;*/
@@ -32,3 +65,20 @@ body {
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
 }
+.form .btn {
+	width: 50%;
+	text-align: center;
+	background: #246eb9;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 0 0 6px 6px;
+	font-family: "Slabo 27px", serif;
+	font-size: 18px;
+  }
+  
+  .form .btn:hover {
+	background: #4357ad;
+  }

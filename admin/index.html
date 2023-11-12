@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Adminitracion</title>
   <link rel="stylesheet" href="styleAd.css" />
 </head>
 
@@ -18,26 +18,37 @@
     <button onclick="DomManipulator.fillFormStudent()">
       fillFormStudent
     </button>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Alta de alumnos</a></li>
+        <li><a href="#">Inscriptos</a></li>
+        <li><a href="#">Materias</a></li>
+      </ul>
+    </nav>
 
-    <h1>Estudiantes</h1>
-    <form id="form-student" class="form">
-      <div class="conteinerInputs">
-        <input placeholder="id" type="hidden" name="id" value="-1" />
-        <input placeholder="Nombre" type="text" name="name" />
-        <input placeholder="Apellido" type="text" name="surName" />
-        <input placeholder="Edad" type="number" name="yearBorn" />
-        <input placeholder="Fecha de nacimiento" type="date"  name="date"/>
-        <input placeholder="Pais de nacimiento" type="text" name="country"/>
-        <input placeholder="DNI" type="number" name="dni"/>
-        <label for="form-student-canEnrol">canEnrol</label>
-        <input id="form-student-canEnrol" type="checkbox" name="canEnrol" />
-        <input placeholder="Email" type="email" name="email" />
-        <input placeholder="code" type="text" name="code" />
-        <input placeholder="password" type="text" name="password" />
-      </div>
-      <button type="submit">Agregar</button>
+    <div class="conteiner">
+      <h1>Estudiantes</h1>
+      <form id="form-student" class="form">
+        <div class="conteinerInputs">
+          <input placeholder="id" type="hidden" name="id" value="-1" />
+          <input placeholder="Nombre" type="text" name="name" />
+          <input placeholder="Apellido" type="text" name="surName" />
+          <input placeholder="Edad" type="number" name="yearBorn" />
+          <input placeholder="Fecha de nacimiento" type="date" name="date" />
+          <input placeholder="Pais de nacimiento" type="text" name="country" />
+          <input placeholder="DNI" type="number" name="dni" />
+          <label for="form-student-canEnrol">canEnrol</label>
+          <input id="form-student-canEnrol" type="checkbox" name="canEnrol" />
+          <input placeholder="Email" type="email" name="email" />
+          <input placeholder="code" type="text" name="code" />
+          <input placeholder="password" type="text" name="password" />
+          <button type="submit" class="btn">Agregar</button>
+        </div>
+       
 
-    </form>
+      </form>
+    </div>
     <ul id="list-students"></ul>
   </div>
 
