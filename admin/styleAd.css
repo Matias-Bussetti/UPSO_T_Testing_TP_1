@@ -68,6 +68,22 @@ h1{
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
 }
+.content-select select{
+	display: inline-block;
+	width: 100%;
+	cursor: pointer;
+	border: 0.5px solid #226fc1;;
+	/*border-color: #226fc1;*/
+	background:white;
+	color:#226fc1;
+	font-size: 1em;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-radius: 10px;
+}
+
+.content-select select:hover{
+	background: rgb(193, 199, 219);
+}
 .form .btn {
 	width: 50%;
 	text-align: center;

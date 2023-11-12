@@ -35,6 +35,20 @@ body {
 .menu li a:hover{
     background: #4d4a49;
 }
+.conteiner{
+
+    list-style: none;
+    padding: 0px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+	width: 1000px;
+	
+	padding: 20px;
+	background: #fff;
+	border-radius:6px 6px 0 0;
+}
+.mate
 .mate input[type="text"],
 .mate input[type="email"],
 .mate input[type="number"],
