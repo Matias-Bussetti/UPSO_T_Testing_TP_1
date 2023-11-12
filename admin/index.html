@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./../style.css" />
-  </head>
-  <body>
-    <div>
-      <button onclick="DomManipulator.testStudent1()">testStudent1</button>
-      <button onclick="DomManipulator.testStudent2()">testStudent2</button>
-      <button onclick="DomManipulator.listStudentsFromStorage()">
-        fillFormStudent
-      </button>
-      <button onclick="DomManipulator.fillFormStudent()">
-        fillFormStudent
-      </button>
 
-      <h1>Estudiantes</h1>
-      <form id="form-student">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styleAd.css" />
+</head>
+
+<body>
+  <div>
+    <button onclick="DomManipulator.testStudent1()">testStudent1</button>
+    <button onclick="DomManipulator.testStudent2()">testStudent2</button>
+    <button onclick="DomManipulator.listStudentsFromStorage()">
+      fillFormStudent
+    </button>
+    <button onclick="DomManipulator.fillFormStudent()">
+      fillFormStudent
+    </button>
+
+    <h1>Estudiantes</h1>
+    <form id="form-student" class="form">
+      <div class="conteinerInputs">
         <input placeholder="id" type="hidden" name="id" value="-1" />
-        <input placeholder="name" type="text" name="name" />
-        <input placeholder="surName" type="text" name="surName" />
+        <input placeholder="Nombre" type="text" name="name" />
+        <input placeholder="Apellido" type="text" name="surName" />
+        <input placeholder="Edad" type="number" name="yearBorn" />
+        <input placeholder="Fecha de nacimiento" type="date"  name="date"/>
+        <input placeholder="Pais de nacimiento" type="text" name="country"/>
+        <input placeholder="DNI" type="number" name="dni"/>
         <label for="form-student-canEnrol">canEnrol</label>
         <input id="form-student-canEnrol" type="checkbox" name="canEnrol" />
-        <input placeholder="email" type="email" name="email" />
-        <input placeholder="yearBorn" type="number" name="yearBorn" />
+        <input placeholder="Email" type="email" name="email" />
         <input placeholder="code" type="text" name="code" />
         <input placeholder="password" type="text" name="password" />
-        <button type="submit">Agregar</button>
-      </form>
-      <ul id="list-students"></ul>
-    </div>
+      </div>
+      <button type="submit">Agregar</button>
 
-    <script src="./app.js"></script>
-  </body>
+    </form>
+    <ul id="list-students"></ul>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
 </html>
