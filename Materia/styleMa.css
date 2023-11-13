@@ -48,13 +48,13 @@ body {
 	background: #fff;
 	border-radius:6px 6px 0 0;
 }
-.mate
-.mate input[type="text"],
-.mate input[type="email"],
-.mate input[type="number"],
-.mate input[type="password"] {
+
+.mate td input[type="text"],
+.mate td input[type="email"],
+.mate td input[type="number"],
+.mate td input[type="password"] {
 	display: block;
-	width: 50%;
+	width: 90%;
 	margin-bottom: 20px;
 	padding: 15px 10px;
 	border:none;
@@ -75,7 +75,18 @@ body {
 	font-family: "Slabo 27px", serif;
 	font-size: 18px;
   }
-  
+  .content-select select{
+	display: inline-block;
+	width: 90%;
+	cursor: pointer;
+	border: 0.5px solid #18191a;;
+	/*border-color: #226fc1;*/
+	background:white;
+	color:#000000;
+	font-size: 1em;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-radius: 10px;
+}
   .form .btn:hover {
 	background: #4357ad;
   }
