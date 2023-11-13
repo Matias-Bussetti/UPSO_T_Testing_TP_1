@@ -43,7 +43,7 @@ function validateForm(e) {
 
   //Validar contraseña o username
   if (Auth.login(nameUs.value, password.value)) {
-    alert("Mal Login!!");
+    //Si sale ok
   }
 }
 

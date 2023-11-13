@@ -1,9 +1,15 @@
-import { LocalStorageInterface, Student } from "../app.js";
+import { LocalStorageInterface, Student, Auth } from "../app.js";
 
 export class DomManipulator {
   static onWindowLoad() {
     this.formStudentAddEvents();
     this.listStudentsFromStorage();
+
+    var btnLogout = document.querySelector(".btn-selector-logout");
+
+    if (btnLogout) {
+      btnLogout.onclick = () => Auth.logout();
+    }
   }
 
   static formStudentAddEvents() {

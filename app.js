@@ -148,7 +148,7 @@ export class LocalStorageInterface {
 export class Auth {
   static checkLogin() {
     const auth = LocalStorageInterface.getCollection("auth");
-    console.log("auth", auth, auth.length);
+    // console.log("auth", auth, auth.length);
     if (auth.length == 0) {
       window.location.href = "/login";
     }
@@ -156,6 +156,7 @@ export class Auth {
 
   static logout() {
     LocalStorageInterface.deleteCollection("auth");
+    window.location.href = "/login";
   }
 
   static login(username, password) {
@@ -174,9 +175,9 @@ export class Auth {
       students.forEach((student) => {
         if (student.code == username && student.password == password) {
           window.location.href = "/student";
+          return true;
         }
       });
-      return true;
     }
 
     return false;

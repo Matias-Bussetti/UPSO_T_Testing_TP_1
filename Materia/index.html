@@ -1,91 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materias</title>
+    <link rel="stylesheet" href="styleMa.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materias</title>
-  <link rel="stylesheet" href="styleMa.css">
-</head>
-
-<body>
-  <nav>
-    <ul class="menu">
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Alta de alumnos</a></li>
-      <li><a href="#">Inscriptos</a></li>
-      <li><a href="#">Materias</a></li>
-      <li><a href="#">Cerrar Sesion</a></li>
-    </ul>
-  </nav>
-  <div>
-    <h1>Administracion de Materias</h1>
-    <div class="mate">
-      <div class="conteiner">
-        <table border>
-          <thead>
-            <tr>
-              <th colspan="5">
-                <h3>Fronted</h3>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td colspan=3>
-                <details>
-                  <summary>Detalle</summary>
-                  <input type="text" name="proFront" placeholder="Nombre Profesor" value="Mariana">
-                  <input type="text" name="date" placeholder="Dia" value="Lunes">
-                  <input type="text" name="timeFront" placeholder="Horario" value="19 a 21 hrs ARG">
-                  <input type="number" name="ID" placeholder="id">
-                  <div class="content-select">
-                    <select name="HabilitacionDocente" id="HD">
-                      <option value="0">Habilitacion Docente</option>
-                      <option value="Porhacer">Por hacer</option>
-                      <option value="Haciendo">Haciendo</option>
-                      <option value="Hecha">Hecha</option>
-                    </select>
-                  </div>
-
-                </details>
-              </td>
-            </tr>
-
-          </tbody>
-        </table>
-        <div>
-          <h3>Backend</h3>
-          <input type="text" name="proBack" placeholder="Nombre Profesor" value="Luis">
-          <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-        </div>
-        <div>
-          <h3>Base datos</h3>
-          <input type="text" name="proBase" placeholder="Nombre Profesor" value="Laura">
-          <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-        </div>
-        <div>
-          <h3>Testing</h3>
-          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Jose">
-          <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-        </div>
-        <div>
-          <h3>Infraestructura</h3>
-          <input type="text" name="proInfra" placeholder="Nombre Profesor" value="Belen">
-          <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
-        </div>
-        <div>
-          <h3>Seguridad</h3>
-          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Gaston">
-          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-        </div>
-        <div>
-          <h3>Agile</h3>
-          <input type="text" name="proAgil" placeholder="Nombre Profesor" value="Celeste">
-          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
+  <body>
+    <nav>
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="../admin/">Alta de alumnos</a></li>
+        <li><a href="#">Inscriptos</a></li>
+        <li><a href="/materia">Materias</a></li>
+        <li><a class="btn-selector-logout" href="#">Cerrar Sesion</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h1>Administracion de Materias</h1>
+      <div class="mate">
+        <div class="conteiner">
+          <table border>
+            <thead>
+              <tr>
+                <th colspan="5">
+                  <h3>Fronted</h3>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="3">
+                  <details>
+                    <summary>Detalle</summary>
+                    <input
+                      type="text"
+                      name="proFront"
+                      placeholder="Nombre Profesor"
+                      value="Mariana"
+                    />
+                    <input
+                      type="text"
+                      name="date"
+                      placeholder="Dia"
+                      value="Lunes"
+                    />
+                    <input
+                      type="text"
+                      name="timeFront"
+                      placeholder="Horario"
+                      value="19 a 21 hrs ARG"
+                    />
+                    <input type="number" name="ID" placeholder="id" />
+                    <div class="content-select">
+                      <select name="HabilitacionDocente" id="HD">
+                        <option value="0">Habilitacion Docente</option>
+                        <option value="Porhacer">Por hacer</option>
+                        <option value="Haciendo">Haciendo</option>
+                        <option value="Hecha">Hecha</option>
+                      </select>
+                    </div>
+                  </details>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <h3>Backend</h3>
+            <input
+              type="text"
+              name="proBack"
+              placeholder="Nombre Profesor"
+              value="Luis"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="18 a 20 hrs ARG"
+            />
+          </div>
+          <div>
+            <h3>Base datos</h3>
+            <input
+              type="text"
+              name="proBase"
+              placeholder="Nombre Profesor"
+              value="Laura"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="18 a 20 hrs ARG"
+            />
+          </div>
+          <div>
+            <h3>Testing</h3>
+            <input
+              type="text"
+              name="proTes"
+              placeholder="Nombre Profesor"
+              value="Jose"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="18 a 20 hrs ARG"
+            />
+          </div>
+          <div>
+            <h3>Infraestructura</h3>
+            <input
+              type="text"
+              name="proInfra"
+              placeholder="Nombre Profesor"
+              value="Belen"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="16 a 18 hrs ARG"
+            />
+          </div>
+          <div>
+            <h3>Seguridad</h3>
+            <input
+              type="text"
+              name="proTes"
+              placeholder="Nombre Profesor"
+              value="Gaston"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="19 a 21 hrs ARG"
+            />
+          </div>
+          <div>
+            <h3>Agile</h3>
+            <input
+              type="text"
+              name="proAgil"
+              placeholder="Nombre Profesor"
+              value="Celeste"
+            />
+            <input
+              type="text"
+              name="timeBack"
+              placeholder="Horario"
+              value="19 a 21 hrs ARG"
+            />
+          </div>
         </div>
       </div>
-
     </div>
-  </div>
-</body>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
