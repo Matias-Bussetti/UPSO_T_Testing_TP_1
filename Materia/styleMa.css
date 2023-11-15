@@ -45,22 +45,34 @@ body {
 	width: 1000px;
 	
 	padding: 20px;
-	background: #fff;
+	background: #67646461;
 	border-radius:6px 6px 0 0;
 }
+h1{
+	text-align: center;
+	color: #fff;
+}
+.addMateria details{
+	background: rgb(55, 212, 108);
+	width: 30%;
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
 details{
 	background: #f2f2f2;
 	padding: 1rem;
 	margin: 0.5rem;
 	border-radius: 6px;
 	cursor: pointer;
-  }
+}
 
-.mate td input[type="text"],
-.mate td input[type="email"],
-.mate td input[type="number"],
-.mate td input[type="password"], 
-.mate input{
+.mate input[type="text"],
+.mate input[type="email"],
+.mate input[type="number"],
+.mate input[type="password"]{
 	display: block;
 	width: 90%;
 	margin-bottom: 20px;
@@ -97,7 +109,7 @@ details{
 }
   
   .mate .btn {
-	width: 10%;
+	width: 50%;
 	text-align: center;
 	background: #246eb9;
 	color: #fff;
