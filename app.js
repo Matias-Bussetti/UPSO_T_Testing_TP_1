@@ -1,5 +1,5 @@
 "use strict";
-
+//cambio
 export class Auth {
   static checkLogin() {
     const auth = LocalStorageInterface.getCollection("auth");
