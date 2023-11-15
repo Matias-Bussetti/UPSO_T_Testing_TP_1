@@ -36,14 +36,14 @@
 
       </div>
       <!-- Frontend -->
-      <details>
+      <details id="vemos">
         <summary>Frontend</summary>
-        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana" id="profe">
-        <input type="text" name="date" placeholder="Dia" value="Lunes" id="date">
-        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG" id="hour">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana" id="profe" disabled>
+        <input type="text" name="date" placeholder="Dia" value="Lunes" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <!-- Se tiene que ir cuando ya lo seleccione -->
-        <input type="submit" class="btn-edith" id="edith" value="Editar" />
+        <input type="submit" class="btn-edith" id="edith" value="Editar"  />
         <!-- Este boton tiene que aparecer cuando se edita -->
         <!-- Y desaparecer cuando se guarda -->
         <input type="submit" class="btn-save" id="save" value="Guardar" />
@@ -90,11 +90,14 @@
       <!-- Backend -->
       <details>
         <summary>Backend</summary>
-        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Luis">
-        <input type="text" name="date" placeholder="Dia" value="Lunes">
-        <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
-        <input type="submit" class="btn-edith" value="Editar" />
+        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Luis" id="profe" disabled>
+        <input type="text" name="date" placeholder="Dia" value="Lunes" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
+        <input type="submit" class="btn-edith" value="Editar" id="edith" />
+         <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -136,11 +139,15 @@
       <!-- Base de datos -->
       <details>
         <summary>Base de Datos</summary>
-        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Laura">
-        <input type="text" name="date" placeholder="Dia" value="Lunes">
-        <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Laura" id="profe" disabled>
+        <input type="text" name="date" placeholder="Dia" value="Lunes" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <input type="submit" class="btn-edith" value="Editar" />
+            <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
+        <br>
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -183,11 +190,14 @@
       <!-- Testing -->
       <details>
         <summary>Testing</summary>
-        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Jose">
-        <input type="text" name="date" placeholder="Dia" value="Jueves">
-        <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Jose" id="profe" disabled>
+        <input type="text" name="date" placeholder="Dia" value="Jueves" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <input type="submit" class="btn-edith" value="Editar" />
+            <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -229,11 +239,14 @@
       <!-- Infraestructura -->
       <details>
         <summary>Infraestructura</summary>
-        <input type="text" name="proInfra" placeholder="Nombre Profesor" value="Belen">
-        <input type="text" name="date" placeholder="Dia" value="Jueves">
-        <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proInfra" placeholder="Nombre Profesor" value="Belen" id="profe" disabled>
+        <input type="text" name="date" placeholder="Dia" value="Jueves" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <input type="submit" class="btn-edith" value="Editar" />
+               <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -274,11 +287,14 @@
       <!-- Seguridad -->
       <details>
         <summary>Seguridad</summary>
-        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Gaston">
-        <input type="text" name="date" placeholder="Dia" value="Miercoles">
-        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Gaston"  id="profe" disabled >
+        <input type="text" name="date" placeholder="Dia" value="Miercoles" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <input type="submit" class="btn-edith" value="Editar" />
+               <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -320,11 +336,14 @@
       <!-- Agile -->
       <details>
         <summary>Agile</summary>
-        <input type="text" name="proAgil" placeholder="Nombre Profesor" value="Celeste">
-        <input type="text" name="date" placeholder="Dia" value="Viernes">
-        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-        <input type="number" name="ID" placeholder="id">
+        <input type="text" name="proAgil" placeholder="Nombre Profesor" value="Celeste"  id="profe" disabled >
+        <input type="text" name="date" placeholder="Dia" value="Viernes" id="date" disabled>
+        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG" id="hour" disabled>
+        <input type="number" name="ID" placeholder="id" id="ID" disabled>
         <input type="submit" class="btn-edith" value="Editar" />
+               <!-- Este boton tiene que aparecer cuando se edita -->
+        <!-- Y desaparecer cuando se guarda -->
+        <input type="submit" class="btn-save" id="save" value="Guardar" />
         <br>
         <div class="content-select">
           <select name="HabilitacionDocente" id="HD">
@@ -386,20 +405,20 @@
     function disableInput(element_id) {
       $(element_id).disabled = false;
     }
-
-
     /**
      * Event listeners
      *
      */
-
-    $('save').addEventListener("click", () => {
-      swapInputDisabled('profe', 'date');
+    $('edith').addEventListener("click", () => {
+            disableInput('profe');
+            disableInput('date');
+            disableInput('hour');
     });
     $('save').addEventListener("click", () => {
-      swapInputDisabled('date');
-    });
-
+            swapInputDisabled('profe');
+            swapInputDisabled('date');
+            swapInputDisabled('hour');
+    })
   </script>
 </body>
 
