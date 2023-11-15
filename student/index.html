@@ -1,22 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styleStu.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">Materias</a></li>
-        <li><a href="#" class="btn-selector-logout">Cerrar Sesion</a></li>
-      </ul>
-    </nav>
-    <h1>Alumnos</h1>
 
-    <script type="module" src="./../auth.js"></script>
-    <button id="logout">Logout</button>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styleStu.css" />
+  <link rel="icon" href="img/user-manage_114453.ico">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="#">Inicio</a></li>
+      <!-- Ver si ponerlo en el nav -->
+      <!-- <li><a href="#">Materias</a></li>
+      <li><a href="#">Inscripcion Materias</a></li> -->
+      <li><a href="#" class="btn-selector-logout">Cerrar Sesion</a></li>
+    </ul>
+  </nav>
+  <div class="conteiner">
+    <h1>Alumnos</h1>
+    <!-- Se tiene que visualizar el nombre, apellido, mail, codigo del cuatrimetres -->
+    <div class="informactionIam">
+
+
+    </div>
+    <!--Materias que tiene inscripto   -->
+    <div class="enrolledSubjescts">
+      <table border="1">
+        <tr>
+          <td></td>
+          <th>Nombre</th>
+          <th>Profesor</th>
+          <th>Mail catedra</th>
+          <th>Dia</th>
+          <th>Horario</th>
+        </tr>
+        <tr>
+          <!-- Ejemplo -->
+          <!-- Aca Iria el numero de materia -->
+          <th>1</th>
+          <!-- Aca va el nombre materia -->
+          <td>tejido</td>
+          <!-- nombre profesor -->
+          <td>martita</td>
+          <!-- Aca va el email  -->
+          <td>arturito@gmail.com</td>
+          <!-- dia -->
+          <td>d</td>
+          <!-- horario -->
+          <td>19 hs 22 ARG</td>
+
+        </tr>
+
+      </table>
+    </div>
+    <!-- Inscribirse  a una materia -->
+    <div class="addMateria">
+      <!--Agregar Materia inscripta  -->
+      <details>
+        <summary>Inscribirse Materias</summary>
+        <table border="1">
+          <tr>
+            <td></td>
+            <th>Nombre</th>
+            <th>Profesor</th>
+            <th>Mail catedra</th>
+            <th>Dia</th>
+            <th>Horario</th>
+            <th></th>
+          </tr>
+          <tr>
+            <!-- Ejemplo -->
+            <!-- Aca Iria el numero de materia -->
+            <th>1</th>
+            <!-- Aca va el nombre materia -->
+            <td>tejido</td>
+            <!-- nombre profesor -->
+            <td>martita</td>
+            <!-- Aca va el email  -->
+            <td>arturito@gmail.com</td>
+            <!-- dia -->
+            <td>d</td>
+            <!-- horario -->
+            <td>19 hs 22 ARG</td>
+            <td> <input type="submit" class="enroll" id="enroll" value="inscribirse" /></td>
+  
+          </tr>
+      </details>
+
+    </div>
+  </div>
+  <script type="module" src="./../auth.js"></script>
+</body>
+
 </html>

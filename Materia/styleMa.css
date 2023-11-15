@@ -45,14 +45,45 @@ body {
 	width: 1000px;
 	
 	padding: 20px;
-	background: #fff;
+	background: #67646461;
 	border-radius:6px 6px 0 0;
 }
+h1{
+	text-align: center;
+	color: #fff;
+}
+.addMateria details{
+	background: rgb(55, 212, 108);
+	width: 30%;
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
 
-.mate td input[type="text"],
-.mate td input[type="email"],
-.mate td input[type="number"],
-.mate td input[type="password"] {
+details{
+	background: #f2f2f2;
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+summary{
+	list-style: none;
+}
+summary::before{
+	content: '+';
+	padding-right: 1rem;
+}
+details[open]	summary::before{
+	content: '-';
+}
+
+.mate input[type="text"],
+.mate input[type="email"],
+.mate input[type="number"],
+.mate input[type="password"]{
 	display: block;
 	width: 90%;
 	margin-bottom: 20px;
@@ -87,6 +118,49 @@ body {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	border-radius: 10px;
 }
-  .form .btn:hover {
+  
+  .mate .btn {
+	width: 50%;
+	text-align: center;
+	background: #246eb9;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 0 0 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+}
+
+.mate .btn:hover {
 	background: #4357ad;
-  }
+}
+.mate .btn-edith {	
+	width: 10%;
+	text-align: center;
+	background: #67b924;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+
+}
+.mate .btn-save {	
+	width: 10%;
+	text-align: center;
+	background: #2e24b9;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+
+}
