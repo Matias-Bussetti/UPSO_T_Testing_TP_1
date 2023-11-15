@@ -33,17 +33,23 @@
             <input type="text" name="date" placeholder="Dia">
             <input type="text" name="timeBack" placeholder="Horario">
             <input type="number" name="ID" placeholder="id">
-            <input type="submit" class="btn" value="Agregar" />
+            <input type="submit" class="btn" value=" + Agregar" />
           </details>
 
         </div>
         <!-- Frontend -->
         <details>
           <summary>Frontend</summary>
-          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana">
-          <input type="text" name="date" placeholder="Dia" value="Lunes">
-          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana" id="profe">
+          <input type="text" name="date" placeholder="Dia" value="Lunes" id="date">
+          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG" id="hour">
           <input type="number" name="ID" placeholder="id">
+          <!-- Se tiene que ir cuando ya lo seleccione -->
+          <input type="submit" class="btn-edith" id="edith" value="Editar" />
+          <!-- Este boton tiene que aparecer cuando se edita -->
+          <!-- Y desaparecer cuando se guarda -->
+          <input type="submit" class="btn-save" id="save" value="Guardar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -90,6 +96,8 @@
           <input type="text" name="date" placeholder="Dia" value="Lunes">
           <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -134,6 +142,8 @@
           <input type="text" name="date" placeholder="Dia" value="Lunes">
           <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -179,6 +189,8 @@
           <input type="text" name="date" placeholder="Dia" value="Jueves">
           <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -223,6 +235,8 @@
           <input type="text" name="date" placeholder="Dia" value="Jueves">
           <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -266,6 +280,8 @@
           <input type="text" name="date" placeholder="Dia" value="Miercoles">
           <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -310,6 +326,8 @@
           <input type="text" name="date" placeholder="Dia" value="Viernes">
           <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
           <input type="number" name="ID" placeholder="id">
+          <input type="submit" class="btn-edith" value="Editar" />
+          <br>
           <div class="content-select">
             <select name="HabilitacionDocente" id="HD">
               <option value="0">Habilitacion Docente</option>
@@ -352,6 +370,42 @@
   </div>
   <!-- <script type="module" src="./../auth.js"></script>
       <script type="module" src="./app.js"></script> -->
+      <script>
+        // https://es.stackoverflow.com/questions/345142/c%C3%B3mo-desabilitar-un-input-con-javascript
+// https://es.stackoverflow.com/questions/404858/habilitar-input-desde-javascript
+        /**
+         * Functions
+         *
+         */
+
+        function $(element_id)
+        {
+            return document.getElementById(element_id);
+        }
+        function swapInputDisabled(element_id)
+        {
+            const state = $(element_id).disabled;
+            $(element_id).disabled = ! state;
+        }
+        function disableInput(element_id)
+        {
+            $(element_id).disabled = false;
+        }
+
+
+        /**
+         * Event listeners
+         *
+         */
+
+        $('save').addEventListener("click", () => {
+            swapInputDisabled('profe','date');
+        });
+        $('save').addEventListener("click", () => {
+            swapInputDisabled('date');
+        });
+       
+    </script>
 </body>
 
 </html>

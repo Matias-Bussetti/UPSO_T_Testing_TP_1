@@ -125,3 +125,31 @@ details{
 .mate .btn:hover {
 	background: #4357ad;
 }
+.mate .btn-edith {	
+	width: 10%;
+	text-align: center;
+	background: #67b924;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+
+}
+.mate .btn-save {	
+	width: 10%;
+	text-align: center;
+	background: #2e24b9;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 6px 6px 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+
+}
