@@ -15,7 +15,7 @@ export class Auth {
   }
 
   static login(username, password) {
-    const students = LocalStorageInterface.getCollection("students");
+    const students = new Students();
 
     console.log(students);
 
@@ -27,7 +27,7 @@ export class Auth {
       window.location.href = "/admin";
       return true;
     } else {
-      students.forEach((student) => {
+      students.list.forEach((student) => {
         if (student.code == username && student.password == password) {
           window.location.href = "/student";
           return true;
@@ -162,6 +162,7 @@ export class Students extends StorageList {
 
   addStudent(data) {
     this.addElementInList(data);
+    // TODO: Validad si el código de usuario existe
     this.saveListInStorage();
   }
 
@@ -232,6 +233,28 @@ export class DomManipulator {
         this.listStudentsFromStorage();
         formStudent.reset();
       };
+
+      //Para que no ingresen el mismo code de student
+      const students = new Students();
+      //
+      let codes = [];
+      students.list.forEach((student) => {
+        if (student.code) {
+          codes.push(student.code + "$");
+        }
+      });
+
+      //
+      let codePattern = `^(?!${codes.join("|")}).+$`;
+
+      formStudent.code.pattern = codePattern;
+      console.log(formStudent.code);
+
+      formStudent.code.oninvalid = (e) => {
+        if (e.target.validity.patternMismatch) {
+          e.target.setCustomValidity("Ingrese otro código.");
+        }
+      };
     }
   }
 
@@ -278,6 +301,7 @@ export class DomManipulator {
   }
 
   static listStudentsFromStorage() {
+    this.formStudentAddEvents();
     var listStudents = document.getElementById("list-students");
 
     if (listStudents) {
