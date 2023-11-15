@@ -28,10 +28,11 @@
           <br>
           <input type="text" name="proTes" placeholder="Nombre Profesor">
           <input type="text" name="date" placeholder="Dia">
-          <div class="time">
-            <input type="text" name="startTime" placeholder="Horario Inicio">
-            <input type="text" name="endTime" placeholder="Horario Fin">
+          <div class="timeAdd">
+          
             <div class="content-select-time">
+              <input type="text" class="hour" name="startTime" placeholder="Horario Inicio">
+              <input type="text" class="hour" name="endTime" placeholder="Horario Fin">
               <select name="timeZone" id="tZ">
                 <option value="AF">Afganistán</option>
                 <option value="AL">Albania</option>
@@ -278,8 +279,10 @@
       <!-- Frontend -->
       <details>
         <summary>Frontend</summary>
+        <div class="infoE">
         <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana" id="profe" disabled>
         <input type="text" name="date" placeholder="Dia" value="Lunes" id="date" disabled>
+        </div>
         <div class="time">
           <input type="text" name="startTime" placeholder="Horario Inicio" value="19 hrs" id="hour" disabled>
           <input type="text" name="endTime" placeholder="Horario Fin" value="21 hrs" id="hour" disabled>

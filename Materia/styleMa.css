@@ -79,13 +79,25 @@ summary::before{
 details[open]	summary::before{
 	content: '-';
 }
-
-.mate input[type="text"],
-.mate input[type="email"],
-.mate input[type="number"],
+.mate .conteiner input[type="text"],
+.mate .conteiner input[type="email"],
+.mate .conteiner input[type="number"],
 .mate input[type="password"]{
 	display: block;
 	width: 90%;
+	margin-bottom: 20px; .infoE
+	padding:15px 10px;
+	border:none;
+	border-bottom: 2px solid #ccc;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+}
+.mate .conteiner .infoE input[type="text"],
+.mate .conteiner .infoE input[type="email"],
+.mate .conteiner .infoE input[type="number"],
+.mate input[type="password"]{
+	display: block;
+	width: 50%;
 	margin-bottom: 20px;
 	padding: 15px 10px;
 	border:none;
@@ -93,18 +105,21 @@ details[open]	summary::before{
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
 }
-.mate .conteiner .time input[type="number"]{
-	display: block;
-	width: 20%;
-	background-color: #000000;
+.mate .conteiner .time input[type="text"]{
+	display:flex;
+	width: 50%;
 	margin-bottom: 20px;
 	padding: 15px 10px;
 	border:none;
-	border-bottom: 2px solid #1f1d1d;
+	border-bottom: 2px solid #ccc;
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
+
 }
-.content-select select{
+.time{
+	background-color: #4d4a49;
+}
+  .content-select select{
 	display: inline-block;
 	width: 90%;
 	cursor: pointer;
@@ -117,9 +132,21 @@ details[open]	summary::before{
 	border-radius: 10px;
 }
 
-.content-select-time select{
+.addMateria .timeAdd .content-select-time select{
 	display: inline-block;
 	width: 90%;
+	cursor: pointer;
+	border: 0.5px solid #18191a;;
+	/*border-color: #226fc1;*/
+	background:white;
+	color:#000000;
+	font-size: 1em;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-radius: 10px;
+}
+.content-select-time select{
+	display: inline-block;
+	width: 20%;
 	cursor: pointer;
 	border: 0.5px solid #18191a;;
 	/*border-color: #226fc1;*/
