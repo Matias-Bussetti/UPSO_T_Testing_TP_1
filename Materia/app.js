@@ -1,9 +1,3 @@
-import { Auth } from "../app.js";
+import { DomManipulator } from "../app.js";
 
-window.onload = () => {
-  var btnLogout = document.querySelector(".btn-selector-logout");
-
-  if (btnLogout) {
-    btnLogout.onclick = () => Auth.logout();
-  }
-};
+window.onload = () => DomManipulator.onWindowLoad();
