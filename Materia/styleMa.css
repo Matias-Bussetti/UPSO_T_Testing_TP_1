@@ -85,7 +85,7 @@ details[open]	summary::before{
 .mate input[type="password"]{
 	display: block;
 	width: 90%;
-	margin-bottom: 20px; .infoE
+	margin-bottom: 20px; 
 	padding:15px 10px;
 	border:none;
 	border-bottom: 2px solid #ccc;
