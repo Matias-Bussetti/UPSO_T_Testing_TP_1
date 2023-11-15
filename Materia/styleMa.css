@@ -69,6 +69,17 @@ details{
 	cursor: pointer;
 }
 
+summary{
+	list-style: none;
+}
+summary::before{
+	content: '+';
+	padding-right: 1rem;
+}
+details[open]	summary::before{
+	content: '-';
+}
+
 .mate input[type="text"],
 .mate input[type="email"],
 .mate input[type="number"],
