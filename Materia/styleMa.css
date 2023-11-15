@@ -93,20 +93,31 @@ details[open]	summary::before{
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
 }
-.form .btn {
-	width: 50%;
-	text-align: center;
-	background: #246eb9;
-	color: #fff;
-	border: none;
+.mate .conteiner .time input[type="number"]{
 	display: block;
+	width: 20%;
+	background-color: #000000;
+	margin-bottom: 20px;
 	padding: 15px 10px;
-	cursor: pointer;
-	border-radius: 0 0 6px 6px;
-	font-family: "Slabo 27px", serif;
+	border:none;
+	border-bottom: 2px solid #1f1d1d;
+	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
-  }
-  .content-select select{
+}
+.content-select select{
+	display: inline-block;
+	width: 90%;
+	cursor: pointer;
+	border: 0.5px solid #18191a;;
+	/*border-color: #226fc1;*/
+	background:white;
+	color:#000000;
+	font-size: 1em;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	border-radius: 10px;
+}
+
+.content-select-time select{
 	display: inline-block;
 	width: 90%;
 	cursor: pointer;
