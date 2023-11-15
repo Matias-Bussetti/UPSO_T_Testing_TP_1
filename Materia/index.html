@@ -1,439 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Materias</title>
-    <link rel="stylesheet" href="styleMa.css" />
-  </head>
 
-  <body>
-    <nav>
-      <ul class="menu">
-        <li><a href="#">Inicio</a></li>
-        <li><a href="../admin/">Alta de alumnos</a></li>
-        <li><a href="#">Inscriptos</a></li>
-        <li><a href="/materia">Materias</a></li>
-        <li><a class="btn-selector-logout" href="#">Cerrar Sesion</a></li>
-      </ul>
-    </nav>
-    <div>
-      <h1>Administracion de Materias</h1>
-      <div class="mate">
-        <div class="conteiner">
-          <table border>
-            <thead>
-              <tr>
-                <th colspan="5">
-                  <h3>Testing</h3>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan=3>
-                  <details>
-                    <summary>Detalle</summary>
-                    <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana">
-                    <input type="text" name="date" placeholder="Dia" value="Lunes">
-                    <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-                    <input type="number" name="ID" placeholder="id">
-                    <div class="content-select">
-                      <select name="HabilitacionDocente" id="HD">
-                        <option value="0">Habilitacion Docente</option>
-                        <option value="Porhacer">Por hacer</option>
-                        <option value="Haciendo">Haciendo</option>
-                        <option value="Hecha">Hecha</option>
-                      </select>
-                    </div>
-                    <br>
-                    <h3>Cantidad de alumnos Inscriptos</h3>
-                    <div class="numberRegister">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materias</title>
+  <link rel="stylesheet" href="styleMa.css" />
+</head>
+<html>
 
-                    </div>
-                    <br>
-                    <h3>Información de alumnos Inscriptos</h3>
-                    <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                    <div class="studentInformation">
-                      <table border="1">
-                        <tr>
-                          <td></td>
-                          <th>Nombre y Apellido</th>
-                          <th>Email</th>
-                        </tr>
-                        <tr>
-                          <!-- Ejemplo -->
-                          <!-- Aca Iria el numero en la lista que es ese alumno -->
-                          <th>1</th>
-                          <!-- Aca va el nombre y apellido -->
-                          <td>Aruturito Esteban quito</td>
-                          <!-- Aca va el email  -->
-                          <td>arturito@gmail.com</td>
-                        </tr>
-                        
-                      </table>
+<body>
+  <nav>
+    <ul class="menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="../admin/">Alta de alumnos</a></li>
+      <li><a href="#">Inscriptos</a></li>
+      <li><a href="/materia">Materias</a></li>
+      <li><a class="btn-selector-logout" href="#">Cerrar Sesion</a></li>
+    </ul>
+  </nav>
+  <div>
+    <h1>Administracion de Materias</h1>
+    <div class="mate">
+      <div class="conteiner">
+        <div class="addMateria">
 
-                    </div>
-                  </details>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table border>
-            <thead>
-              <tr>
-                <th colspan="5">
-                  <h3>Backend</h3>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan=3>
-                  <details>
-                    <summary>Detalle</summary>
-                    <input type="text" name="proTes" placeholder="Nombre Profesor" value="Luis">
-                    <input type="text" name="date" placeholder="Dia" value="Lunes">
-                    <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-                    <input type="number" name="ID" placeholder="id">
-                    <div class="content-select">
-                      <select name="HabilitacionDocente" id="HD">
-                        <option value="0">Habilitacion Docente</option>
-                        <option value="Porhacer">Por hacer</option>
-                        <option value="Haciendo">Haciendo</option>
-                        <option value="Hecha">Hecha</option>
-                      </select>
-                    </div>
-                    <br>
-                    <h3>Cantidad de alumnos Inscriptos</h3>
-                    <div class="numberRegister">
+          <details>
+            <summary>Agregar Materia</summary>
+            <input type="text" name="proTes" placeholder="Nombre Profesor">
+            <input type="text" name="date" placeholder="Dia">
+            <input type="text" name="timeBack" placeholder="Horario">
+            <input type="number" name="ID" placeholder="id">
+            <input type="submit" class="btn" value="Agregar" />
+          </details>
 
-                    </div>
-                    <br>
-                    <h3>Información de alumnos Inscriptos</h3>
-                    <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                    <div class="studentInformation">
-                      <table border="1">
-                        <tr>
-                          <td></td>
-                          <th>Nombre y Apellido</th>
-                          <th>Email</th>
-                        </tr>
-                        <tr>
-                          <!-- Ejemplo -->
-                          <!-- Aca Iria el numero en la lista que es ese alumno -->
-                          <th>1</th>
-                          <!-- Aca va el nombre y apellido -->
-                          <td>Aruturito Esteban quito</td>
-                          <!-- Aca va el email  -->
-                          <td>arturito@gmail.com</td>
-                        </tr>
-                        
-                      </table>
-
-                    </div>
-                  </details>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table border>
-            <thead>
-              <tr>
-                <th colspan="5">
-                  <h3>Base de datos </h3>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan=3>
-                  <details>
-                    <summary>Detalle</summary>
-                    <input type="text" name="proTes" placeholder="Nombre Profesor" value="Laura">
-                    <input type="text" name="date" placeholder="Dia" value="Lunes">
-                    <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
-                    <input type="number" name="ID" placeholder="id">
-                    <div class="content-select">
-                      <select name="HabilitacionDocente" id="HD">
-                        <option value="0">Habilitacion Docente</option>
-                        <option value="Porhacer">Por hacer</option>
-                        <option value="Haciendo">Haciendo</option>
-                        <option value="Hecha">Hecha</option>
-                      </select>
-                    </div>
-                    <br>
-                    <h3>Cantidad de alumnos Inscriptos</h3>
-                    <div class="numberRegister">
-
-                    </div>
-                    <br>
-                    <h3>Información de alumnos Inscriptos</h3>
-                    <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                    <div class="studentInformation">
-                      <table border="1">
-                        <tr>
-                          <td></td>
-                          <th>Nombre y Apellido</th>
-                          <th>Email</th>
-                        </tr>
-                        <tr>
-                          <!-- Ejemplo -->
-                          <!-- Aca Iria el numero en la lista que es ese alumno -->
-                          <th>1</th>
-                          <!-- Aca va el nombre y apellido -->
-                          <td>Aruturito Esteban quito</td>
-                          <!-- Aca va el email  -->
-                          <td>arturito@gmail.com</td>
-                        </tr>
-                        
-                      </table>
-
-                    </div>
-                  </details>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <table border>
-            <thead>
-              <tr>
-                <th colspan="5">
-                  <h3>Testing</h3>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td colspan=3>
-                  <details>
-                    <summary>Detalle</summary>
-                    <input type="text" name="proTes" placeholder="Nombre Profesor" value="Jose">
-                    <input type="text" name="date" placeholder="Dia" value="Jueves">
-                    <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
-                    <input type="number" name="ID" placeholder="id">
-                    <div class="content-select">
-                      <select name="HabilitacionDocente" id="HD">
-                        <option value="0">Habilitacion Docente</option>
-                        <option value="Porhacer">Por hacer</option>
-                        <option value="Haciendo">Haciendo</option>
-                        <option value="Hecha">Hecha</option>
-                      </select>
-                    </div>
-                    <br>
-                    <h3>Cantidad de alumnos Inscriptos</h3>
-                    <div class="numberRegister">
-
-                    </div>
-                    <br>
-                    <h3>Información de alumnos Inscriptos</h3>
-                    <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                    <div class="studentInformation">
-                      <table border="1">
-                        <tr>
-                          <td></td>
-                          <th>Nombre y Apellido</th>
-                          <th>Email</th>
-                        </tr>
-                        <tr>
-                          <!-- Ejemplo -->
-                          <!-- Aca Iria el numero en la lista que es ese alumno -->
-                          <th>1</th>
-                          <!-- Aca va el nombre y apellido -->
-                          <td>Aruturito Esteban quito</td>
-                          <!-- Aca va el email  -->
-                          <td>arturito@gmail.com</td>
-                        </tr>
-                        
-                      </table>
-
-                    </div>
-                  </details>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <div>
-            <table border>
-              <thead>
-                <tr>
-                  <th colspan="5">
-                    <h3>Infraestructura</h3>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td colspan=3>
-                    <details>
-                      <summary>Detalle</summary>
-                      <input type="text" name="proInfra" placeholder="Nombre Profesor" value="Belen">
-                      <input type="text" name="date" placeholder="Dia" value="Jueves">
-                      <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
-                      <input type="number" name="ID" placeholder="id">
-                      <div class="content-select">
-                        <select name="HabilitacionDocente" id="HD">
-                          <option value="0">Habilitacion Docente</option>
-                          <option value="Porhacer">Por hacer</option>
-                          <option value="Haciendo">Haciendo</option>
-                          <option value="Hecha">Hecha</option>
-                        </select>
-                      </div>
-                      <br>
-                      <h3>Cantidad de alumnos Inscriptos</h3>
-                      <div class="numberRegister">
-  
-                      </div>
-                      <br>
-                      <h3>Información de alumnos Inscriptos</h3>
-                      <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                      <div class="studentInformation">
-                        <table border="1">
-                          <tr>
-                            <td></td>
-                            <th>Nombre y Apellido</th>
-                            <th>Email</th>
-                          </tr>
-                          <tr>
-                            <!-- Ejemplo -->
-                            <!-- Aca Iria el numero en la lista que es ese alumno -->
-                            <th>1</th>
-                            <!-- Aca va el nombre y apellido -->
-                            <td>Aruturito Esteban quito</td>
-                            <!-- Aca va el email  -->
-                            <td>arturito@gmail.com</td>
-                          </tr>
-                          
-                        </table>
-                      </div>
-
-                    </details>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div>
-              <table border>
-                <thead>
-                  <tr>
-                    <th colspan="5">
-                      <h3>Seguridad</h3>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan=3>
-                      <details>
-                        <summary>Detalle</summary>
-                        <input type="text" name="proTes" placeholder="Nombre Profesor" value="Gaston">
-                        <input type="text" name="date" placeholder="Dia" value="Miercoles">
-                        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-                        <input type="number" name="ID" placeholder="id">
-                        <div class="content-select">
-                          <select name="HabilitacionDocente" id="HD">
-                            <option value="0">Habilitacion Docente</option>
-                            <option value="Porhacer">Por hacer</option>
-                            <option value="Haciendo">Haciendo</option>
-                            <option value="Hecha">Hecha</option>
-                          </select>
-                        </div>
-                        <br>
-                        <h3>Cantidad de alumnos Inscriptos</h3>
-                        <div class="numberRegister">
-    
-                        </div>
-                        <br>
-                        <h3>Información de alumnos Inscriptos</h3>
-                        <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                        <div class="studentInformation">
-                          <table border="1">
-                            <tr>
-                              <td></td>
-                              <th>Nombre y Apellido</th>
-                              <th>Email</th>
-                            </tr>
-                            <tr>
-                              <!-- Ejemplo -->
-                              <!-- Aca Iria el numero en la lista que es ese alumno -->
-                              <th>1</th>
-                              <!-- Aca va el nombre y apellido -->
-                              <td>Aruturito Esteban quito</td>
-                              <!-- Aca va el email  -->
-                              <td>arturito@gmail.com</td>
-                            </tr>
-                            
-                          </table>
-                        </div>
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <table border>
-                <thead>
-                  <tr>
-                    <th colspan="5">
-                      <h3>Agile</h3>
-
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td colspan=3>
-                      <details>
-                        <summary>Detalle</summary>
-                        <input type="text" name="proAgil" placeholder="Nombre Profesor" value="Celeste">
-                        <input type="text" name="date" placeholder="Dia" value="Viernes">
-                        <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
-                        <input type="number" name="ID" placeholder="id">
-                        <div class="content-select">
-                          <select name="HabilitacionDocente" id="HD">
-                            <option value="0">Habilitacion Docente</option>
-                            <option value="Porhacer">Por hacer</option>
-                            <option value="Haciendo">Haciendo</option>
-                            <option value="Hecha">Hecha</option>
-                          </select>
-                        </div>
-                        <br>
-                        <h3>Cantidad de alumnos Inscriptos</h3>
-                        <div class="numberRegister">
-    
-                        </div>
-                        <br>
-                        <h3>Información de alumnos Inscriptos</h3>
-                        <!-- Aca hiria informacion del alumno como nombre apellido e email -->
-                        <div class="studentInformation">
-                          <table border="1">
-                            <tr>
-                              <td></td>
-                              <th>Nombre y Apellido</th>
-                              <th>Email</th>
-                            </tr>
-                            <tr>
-                              <!-- Ejemplo -->
-                              <!-- Aca Iria el numero en la lista que es ese alumno -->
-                              <th>1</th>
-                              <!-- Aca va el nombre y apellido -->
-                              <td>Aruturito Esteban quito</td>
-                              <!-- Aca va el email  -->
-                              <td>arturito@gmail.com</td>
-                            </tr>
-                            
-                          </table>
-                        </div>
-
-                      </details>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+        </div>
+        <!-- Frontend -->
+        <details>
+          <summary>Frontend</summary>
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Mariana">
+          <input type="text" name="date" placeholder="Dia" value="Lunes">
+          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
 
           </div>
-        </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+
+          </div>
+
+        </details>
+        <!-- Backend -->
+        <details>
+          <summary>Backend</summary>
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Luis">
+          <input type="text" name="date" placeholder="Dia" value="Lunes">
+          <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+
+          </div>
+        </details>
+        <!-- Base de datos -->
+        <details>
+          <summary>Base de Datos</summary>
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Laura">
+          <input type="text" name="date" placeholder="Dia" value="Lunes">
+          <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+
+          </div>
+
+        </details>
+        <!-- Testing -->
+        <details>
+          <summary>Testing</summary>
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Jose">
+          <input type="text" name="date" placeholder="Dia" value="Jueves">
+          <input type="text" name="timeBack" placeholder="Horario" value="18 a 20 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+
+          </div>
+        </details>
+        <!-- Infraestructura -->
+        <details>
+          <summary>Infraestructura</summary>
+          <input type="text" name="proInfra" placeholder="Nombre Profesor" value="Belen">
+          <input type="text" name="date" placeholder="Dia" value="Jueves">
+          <input type="text" name="timeBack" placeholder="Horario" value="16 a 18 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+          </div>
+        </details>
+        <!-- Seguridad -->
+        <details>
+          <summary>Seguridad</summary>
+          <input type="text" name="proTes" placeholder="Nombre Profesor" value="Gaston">
+          <input type="text" name="date" placeholder="Dia" value="Miercoles">
+          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+          </div>
+
+        </details>
+        <!-- Agile -->
+        <details>
+          <summary>Agile</summary>
+          <input type="text" name="proAgil" placeholder="Nombre Profesor" value="Celeste">
+          <input type="text" name="date" placeholder="Dia" value="Viernes">
+          <input type="text" name="timeBack" placeholder="Horario" value="19 a 21 hrs ARG">
+          <input type="number" name="ID" placeholder="id">
+          <div class="content-select">
+            <select name="HabilitacionDocente" id="HD">
+              <option value="0">Habilitacion Docente</option>
+              <option value="Porhacer">Por hacer</option>
+              <option value="Haciendo">Haciendo</option>
+              <option value="Hecha">Hecha</option>
+            </select>
+          </div>
+          <br>
+          <h3>Cantidad de alumnos Inscriptos</h3>
+          <div class="numberRegister">
+
+          </div>
+          <br>
+          <h3>Información de alumnos Inscriptos</h3>
+          <!-- Aca hiria informacion del alumno como nombre apellido e email -->
+          <div class="studentInformation">
+            <table border="1">
+              <tr>
+                <td></td>
+                <th>Nombre y Apellido</th>
+                <th>Email</th>
+              </tr>
+              <tr>
+                <!-- Ejemplo -->
+                <!-- Aca Iria el numero en la lista que es ese alumno -->
+                <th>1</th>
+                <!-- Aca va el nombre y apellido -->
+                <td>Aruturito Esteban quito</td>
+                <!-- Aca va el email  -->
+                <td>arturito@gmail.com</td>
+              </tr>
+
+            </table>
+        </details>
+
+
       </div>
-      <!-- <script type="module" src="./../auth.js"></script>
+    </div>
+  </div>
+  <!-- <script type="module" src="./../auth.js"></script>
       <script type="module" src="./app.js"></script> -->
 </body>
+
+</html>

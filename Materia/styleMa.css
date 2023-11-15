@@ -48,11 +48,19 @@ body {
 	background: #fff;
 	border-radius:6px 6px 0 0;
 }
+details{
+	background: #f2f2f2;
+	padding: 1rem;
+	margin: 0.5rem;
+	border-radius: 6px;
+	cursor: pointer;
+  }
 
 .mate td input[type="text"],
 .mate td input[type="email"],
 .mate td input[type="number"],
-.mate td input[type="password"] {
+.mate td input[type="password"], 
+.mate input{
 	display: block;
 	width: 90%;
 	margin-bottom: 20px;
@@ -87,6 +95,21 @@ body {
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	border-radius: 10px;
 }
-  .form .btn:hover {
+  
+  .mate .btn {
+	width: 10%;
+	text-align: center;
+	background: #246eb9;
+	color: #fff;
+	border: none;
+	display: block;
+	padding: 15px 10px;
+	cursor: pointer;
+	border-radius: 0 0 6px 6px;
+	font-family: 'Slabo 27px', serif;
+	font-size: 18px;
+}
+
+.mate .btn:hover {
 	background: #4357ad;
-  }
+}
