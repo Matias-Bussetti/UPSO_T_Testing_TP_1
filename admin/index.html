@@ -11,14 +11,7 @@
 
 <body>
   <div>
-    <button onclick="DomManipulator.testStudent1()">testStudent1</button>
-    <button onclick="DomManipulator.testStudent2()">testStudent2</button>
-    <button onclick="DomManipulator.listStudentsFromStorage()">
-      fillFormStudent
-    </button>
-    <button onclick="DomManipulator.fillFormStudent()">
-      fillFormStudent
-    </button>
+
     <nav>
       <ul class="menu">
         <li><a href="../admin/">Alta de alumnos</a></li>
@@ -36,7 +29,6 @@
           <input placeholder="id" type="hidden" name="id" value="-1" />
           <input placeholder="Nombre" type="text" name="name" />
           <input placeholder="Apellido" type="text" name="surName" />
-          <input placeholder="Edad" type="number" name="yearBorn" />
           <h4>Fecha de nacimiento</h4>
           <input type="date" name="date" />
           <br />
@@ -284,7 +276,7 @@
           <label for="form-student-canEnrol">canEnrol</label>
           <input id="form-student-canEnrol" type="checkbox" class="check" name="canEnrol" />
           <input placeholder="Email" type="email" name="email" />
-          <input placeholder="code" pattern="" type="text" name="code" />
+          <input placeholder="code"  type="text" name="code" />
           <input placeholder="password" type="text" name="password" />
           <button type="submit" class="btn">Agregar</button>
         </details>
@@ -295,27 +287,32 @@
     <div class="studentInformation">
       <h2>Alumnos Inscriptos</h2>
       <table border="1">
-        <tr>
-          <th>ID</th>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Edad</th>
-          <th>Fecha de nacimiento</th>
-          <th>Pais</th>
-          <th>DNI</th>
-          <th>canEnrol</th>
-          <th>Email</th>
-          <th>Code</th>
-          <th>Password</th>
-        </tr>
-        <tr>
-          <!-- Ejemplo -->
-          <!-- Aca Iria el numero en la lista que es ese alumno -->
-          <td>1</td>
-          <!-- Aca va el nombre -->
-          <td>Aruturito </td>
-          <!-- apellido -->
-          <td>Esteban quito</td>
+        <thead>
+
+          <tr>
+            <td>ID</td>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Fecha de nacimiento</th>
+            <th>Pais</th>
+            <th>DNI</th>
+            <th>Puede Inscribirse</th>
+            <th>Email</th>
+            <th>Code</th>
+            <th>Password</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="table-students">
+
+          <tr>
+            <!-- Ejemplo -->
+            <!-- Aca Iria el numero en la lista que es ese alumno -->
+            <th>1</th>
+            <!-- Aca va el nombre -->
+            <td>Aruturito </td>
+            <!-- apellido -->
+            <td>Esteban quito</td>
           <!-- edad -->
           <td>22</td>
           <!--Fecha de nacimiento  -->
@@ -333,6 +330,7 @@
           <!-- password -->
           <td>jeje12345</td>
         </tr>
+      </tbody>
       </table>
       
 
