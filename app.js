@@ -157,17 +157,6 @@ class StorageList {
 }
 
 export class Students extends StorageList {
-  /*
-  id,
-  name,
-  surName,
-  role,
-  email,
-  yearBorn,
-  code,
-  password,
-  canEnrol
-   */
   constructor() {
     super("students");
   }
@@ -187,37 +176,58 @@ export class Students extends StorageList {
     this.deleteElementInList(id);
     this.saveListInStorage();
   }
+}
 
-  static getStudentFromId(id) {
-    /*
-    const collectionOfStudents =
-      LocalStorageInterface.getCollection("students");
+export class Subjects extends StorageList {
+  constructor() {
+    super("subjects");
+  }
 
-    let returnStudent = null;
+  addSubject(data) {
+    this.addElementInList(data);
+    // TODO: Validad si el código de usuario existe
+    this.saveListInStorage();
+  }
 
-    collectionOfStudents.forEach((student) => {
-      if (student.id == id) {
-        returnStudent = this.studentFromObject(student);
+  updateSubject(id, newData) {
+    this.updateElementInList(id, newData);
+    this.saveListInStorage();
+  }
+
+  deleteSubject(id) {
+    this.deleteElementInList(id);
+    this.saveListInStorage();
+  }
+
+  updateSubjectAttribute(id, attribute, value) {
+    this.list.map((subject) => {
+      if (parseInt(subject.id) == parseInt(id)) {
+        subject[attribute] = value;
       }
+      return subject;
     });
-
-    return returnStudent;
-    */
+    this.saveListInStorage();
   }
 }
 
 export class DomManipulator {
   static onWindowLoad() {
+    // Students
     this.formStudentAddEvents();
     this.listStudentsFromStorage();
 
+    //Botón Cerrar Sessión
     var btnLogout = document.querySelector(".btn-selector-logout");
-
     if (btnLogout) {
       btnLogout.onclick = () => Auth.logout();
     }
+
+    // Subjects
+    this.formSubjectAddEvents();
+    this.listSubjectByCloningSubjectDetailElement();
   }
 
+  //Students
   static formStudentAddEvents() {
     var formStudent = document.getElementById("form-student");
     if (formStudent) {
@@ -236,7 +246,7 @@ export class DomManipulator {
 
         // Si el id es -1 significa que no se esta editando un objeto
         if (formStudent.id.value == "-1") {
-          data.id = Math.floor(Math.random() * 10000 + 1);
+          data.id = Math.floor(Math.random() * 100000 + 1);
           students.addStudent(data);
         } else {
           students.updateStudent(data.id, data);
@@ -271,87 +281,64 @@ export class DomManipulator {
     }
   }
 
-  static testStudent1() {
-    function getRandomInt(min, max) {
-      return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    function getRandomString(length) {
-      const characters =
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-      let result = "";
-      for (let i = 0; i < length; i++) {
-        const randomIndex = getRandomInt(0, characters.length - 1);
-        result += characters.charAt(randomIndex);
-      }
-      return result;
-    }
-
-    function getRandomEmail() {
-      const username = getRandomString(5);
-      const domain = getRandomString(3);
-      const tld = getRandomString(2);
-      return `${username}@${domain}.${tld}`;
-    }
-
-    var student = new Student(
-      getRandomInt(1, 1000), // ID
-      getRandomString(1), // Nombre
-      getRandomString(1), // Apellido
-      getRandomInt(1, 10), // Año
-      getRandomEmail(), // Correo electrónico
-      getRandomInt(2000, 2022), // Año de ingreso
-      getRandomString(4), // Código
-      getRandomInt(10000000, 99999999), // Número de teléfono
-      Math.random() < 0.5 // Estudiante activo (aleatorio 50/50)
-    );
-
-    LocalStorageInterface.storeElementInCollection(student, "students", 10);
-  }
-
-  static testStudent2() {
-    console.log(Student.getStudentFromId(340));
-  }
-
+  //Students
   static listStudentsFromStorage() {
     this.formStudentAddEvents();
-    var listStudents = document.getElementById("list-students");
+    var tableStudents = document.getElementById("table-students");
 
-    if (listStudents) {
-      listStudents.innerHTML = "";
+    if (tableStudents) {
+      tableStudents.innerHTML = "";
 
       const students = new Students();
 
       let counterIdLiElement = 0;
 
       students.list.forEach((student) => {
-        var newListElement = document.createElement("li");
+        var newRow = document.createElement("tr");
 
-        newListElement.id = "li-student-" + counterIdLiElement++;
+        newRow.id = "td-student-" + counterIdLiElement++;
 
-        var studentToArrayOfKeyAttributes = Object.entries(student);
+        const columns = [
+          "id",
+          "name",
+          "surName",
+          "yearBorn",
+          "country",
+          "dni",
+          "canEnrol",
+          "email",
+          "code",
+          "password",
+        ];
 
-        studentToArrayOfKeyAttributes.forEach((attribute) => {
-          newListElement.dataset[attribute[0]] = attribute[1];
+        columns.forEach((column) => {
+          var newTableData = document.createElement("td");
 
-          var newAttributeElement = document.createElement("span");
+          newTableData.innerText = student[column];
 
-          newAttributeElement.innerText =
-            " | " + attribute[0] + ": " + attribute[1];
-          newListElement.appendChild(newAttributeElement);
+          if (column == "canEnrol") {
+            newTableData.innerText = student[column] ? "SI" : "NO";
+          }
+
+          newRow.appendChild(newTableData);
         });
 
-        listStudents.appendChild(newListElement);
+        /*
+        var studentToArrayOfKeyAttributes = Object.entries(student);
+        studentToArrayOfKeyAttributes.forEach((attribute) => {
+          newRow.dataset[attribute[0]] = attribute[1];
+
+        });
+        */
 
         //Buscamos el form
 
         var buttonEditStudent = document.createElement("button");
         buttonEditStudent.onclick = () => {
-          this.fillFormWithObjectAttibutes("form-student", student);
+          this.fillFormWithObjectAttributes("form-student", student);
         };
 
-        buttonEditStudent.innerText = "edit";
-        listStudents.appendChild(buttonEditStudent);
+        buttonEditStudent.innerText = "Editar";
 
         var buttonDeleteStudent = document.createElement("button");
 
@@ -363,13 +350,22 @@ export class DomManipulator {
           this.listStudentsFromStorage();
         };
 
-        buttonDeleteStudent.innerText = "delete";
-        listStudents.appendChild(buttonDeleteStudent);
+        buttonDeleteStudent.innerText = "Borrar";
+
+        var newTableDataButtons = document.createElement("td");
+
+        newTableDataButtons.appendChild(buttonEditStudent);
+        newTableDataButtons.appendChild(buttonDeleteStudent);
+
+        newRow.appendChild(newTableDataButtons);
+
+        tableStudents.appendChild(newRow);
       });
     }
   }
 
-  static fillFormWithObjectAttibutes(formElementId, DataFill) {
+  //Función
+  static fillFormWithObjectAttributes(formElementId, DataFill) {
     var form = document.getElementById(formElementId);
     if (form) {
       Object.entries(DataFill).forEach((attribute) => {
@@ -381,6 +377,116 @@ export class DomManipulator {
             form[attribute[0]].value = attribute[1];
           }
         }
+      });
+    }
+  }
+
+  //Subjects
+  static formSubjectAddEvents() {
+    var formSubject = document.getElementById("form-subject");
+
+    if (formSubject) {
+      formSubject.onsubmit = (e) => {
+        e.preventDefault();
+
+        let data = {};
+        formSubject.querySelectorAll("input, select").forEach((input) => {
+          data[input.name] =
+            input.type == "checkbox" ? input.checked : input.value;
+        });
+
+        const subjects = new Subjects();
+
+        // Si el id es -1 significa que no se esta editando un objeto
+        if (formSubject.id.value == "-1") {
+          data.id = Math.floor(Math.random() * 100000 + 1);
+          subjects.addSubject(data);
+        } else {
+          subjects.updateSubject(data.id, data);
+        }
+
+        //this.listStudentsFromStorage();
+        formSubject.reset();
+      };
+    }
+  }
+
+  //Subjects
+  static listSubjectByCloningSubjectDetailElement() {
+    var subjectDetailElement = document.getElementById(
+      "to-clone-subject-present"
+    );
+
+    if (subjectDetailElement) {
+      const subjects = new Subjects();
+
+      subjects.list.forEach((subject) => {
+        var cloneOfSubjectDetailElement = subjectDetailElement.cloneNode(true);
+
+        cloneOfSubjectDetailElement.removeAttribute("id");
+        cloneOfSubjectDetailElement.removeAttribute("style");
+
+        //onChangeMethod
+        function updateFieldInSubject(e) {
+          subjects.updateSubjectAttribute(
+            subject.id,
+            e.target.name,
+            e.target.value
+          );
+        }
+
+        //Nombre de materia
+        cloneOfSubjectDetailElement.querySelector("summary").innerText =
+          subject.name;
+
+        //Nombre Profesor
+        var inputTeacherName = cloneOfSubjectDetailElement.querySelector(
+          'input[name="teacherName"]'
+        );
+        inputTeacherName.value = subject.teacherName;
+        inputTeacherName.oninput = (e) => updateFieldInSubject(e);
+
+        //Día
+        var inputDay =
+          cloneOfSubjectDetailElement.querySelector('input[name="day"]');
+        inputDay.value = subject.day;
+        inputDay.oninput = (e) => updateFieldInSubject(e);
+
+        //Hora inicio
+        var inputHourStart = cloneOfSubjectDetailElement.querySelector(
+          'input[name="hourStart"]'
+        );
+        inputHourStart.value = subject.hourStart;
+        inputHourStart.oninput = (e) => updateFieldInSubject(e);
+
+        //Hora Final
+        var inputHourEnd = cloneOfSubjectDetailElement.querySelector(
+          'input[name="hourEnd"]'
+        );
+        inputHourEnd.value = subject.hourEnd;
+        inputHourEnd.oninput = (e) => updateFieldInSubject(e);
+
+        //Pais
+        var selectCountry = cloneOfSubjectDetailElement.querySelector(
+          'select[name="country"]'
+        );
+        selectCountry.value = subject.country;
+        selectCountry.oninput = (e) => updateFieldInSubject(e);
+
+        //Habilitacion Docente
+        var selectTeacherHabilitation =
+          cloneOfSubjectDetailElement.querySelector(
+            'select[name="teacherHabilitation"]'
+          );
+        selectTeacherHabilitation.value = subject.teacherHabilitation;
+        selectTeacherHabilitation.oninput = (e) => updateFieldInSubject(e);
+
+        console.log(cloneOfSubjectDetailElement, subject);
+
+        //Agregamos el elemento a el contanedor
+        document
+          .getElementById("container-subjects")
+          .appendChild(cloneOfSubjectDetailElement);
       });
     }
   }
