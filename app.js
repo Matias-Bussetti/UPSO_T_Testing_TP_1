@@ -3,9 +3,21 @@
 export class Auth {
   static checkLogin() {
     const auth = LocalStorageInterface.getCollection("auth");
-    // console.log("auth", auth, auth.length);
     if (auth.length == 0) {
       window.location.href = "/login";
+    }
+  }
+
+  static redirectToDashboard() {
+    const auth = LocalStorageInterface.getCollection("auth");
+    if (auth.length > 0) {
+      const authUser = JSON.parse(auth);
+      //Redireccion a cada dashboard
+      if (authUser.userId == -1) {
+        window.location.href = "/admin";
+      } else {
+        window.location.href = "/students";
+      }
     }
   }
 
@@ -21,8 +33,8 @@ export class Auth {
 
     if (username == "admin" && password == "c0ntr4s3ñ4") {
       LocalStorageInterface.storeCollection(
-        JSON.stringify({ userId: -1, type: "admin" }),
-        "auth"
+        "auth",
+        JSON.stringify({ userId: -1, type: "admin" })
       );
       window.location.href = "/admin";
       return true;
@@ -235,6 +247,7 @@ export class DomManipulator {
       };
 
       //Para que no ingresen el mismo code de student
+      /*
       const students = new Students();
       //
       let codes = [];
@@ -254,7 +267,7 @@ export class DomManipulator {
         if (e.target.validity.patternMismatch) {
           e.target.setCustomValidity("Ingrese otro código.");
         }
-      };
+      };*/
     }
   }
 

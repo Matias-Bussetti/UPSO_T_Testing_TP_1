@@ -1,4 +1,4 @@
-import { Auth } from "/app.js";
+import { Auth } from "../app.js";
 
 //para hacer verificaciones dentro del formulario
 var form = document.getElementById("form");
@@ -48,3 +48,7 @@ function validateForm(e) {
 }
 
 form.addEventListener("submit", validateForm);
+
+window.onload = () => {
+  Auth.redirectToDashboard();
+};
