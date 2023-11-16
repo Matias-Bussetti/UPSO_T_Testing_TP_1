@@ -367,7 +367,7 @@ export class DomManipulator {
           "id",
           "name",
           "surName",
-          "yearBorn",
+          "date",
           "country",
           "dni",
           "canEnrol",
@@ -383,6 +383,32 @@ export class DomManipulator {
 
           if (column == "canEnrol") {
             newTableData.innerText = student[column] ? "SI" : "NO";
+          }
+
+          if (column == "date") {
+            function calculateAge(birthDate) {
+              // Parse the birthdate string to a Date object
+              var birthDate = new Date(birthDate);
+
+              // Get the current date
+              var currentDate = new Date();
+
+              // Calculate the difference in milliseconds
+              var timeDifference = currentDate - birthDate;
+
+              // Calculate the age in years
+              var age = Math.floor(
+                timeDifference / (365.25 * 24 * 60 * 60 * 1000)
+              );
+
+              return age;
+            }
+
+            newTableData.innerText =
+              new Date(student.date).toLocaleDateString() +
+              " (" +
+              calculateAge(student.date) +
+              " años)";
           }
 
           newRow.appendChild(newTableData);

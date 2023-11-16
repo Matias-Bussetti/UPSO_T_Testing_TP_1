@@ -1,222 +1,221 @@
 * {
-	margin: 0;
-	padding: 0;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	background: rgb(37, 37, 37);
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
+  background: rgb(37, 37, 37);
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
-.menu{
-    background: #000000;
-    list-style: none;
-    padding: 0px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
+.menu {
+  background: #000000;
+  list-style: none;
+  padding: 0px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
 }
 
 .menu li {
-    display: inline-block;
-    text-align: center;
+  display: inline-block;
+  text-align: center;
 }
 
-.menu li a{
-    color: white;
-    text-decoration: none;
-    display: inline-block;
-    padding: 20px;
+.menu li a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 20px;
 }
 
-.menu li a:hover{
-    background: #4d4a49;
+.menu li a:hover {
+  background: #4d4a49;
 }
-.conteiner{
+.conteiner {
+  list-style: none;
+  padding: 0px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  width: 1000px;
 
-    list-style: none;
-    padding: 0px;
-    width: 90%;
-    max-width: 1000px;
-    margin: 20px auto;
-	width: 1000px;
-	
-	padding: 20px;
-	background: #67646461;
-	border-radius:6px 6px 0 0;
+  padding: 20px;
+  background: #67646461;
+  border-radius: 6px 6px 0 0;
 }
-h1{
-	text-align: center;
-	color: #fff;
+h1 {
+  text-align: center;
+  color: #fff;
 }
-.addMateria details{
-	background: rgb(55, 212, 108);
-	width: 30%;
-	padding: 1rem;
-	margin: 0.5rem;
-	border-radius: 6px;
-	cursor: pointer;
-}
-
-details{
-	background: #f2f2f2;
-	padding: 1rem;
-	margin: 0.5rem;
-	border-radius: 6px;
-	cursor: pointer;
+.addMateria details {
+  background: rgb(55, 212, 108);
+  width: 30%;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-summary{
-	list-style: none;
+details {
+  background: #f2f2f2;
+  padding: 1rem;
+  margin: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
 }
-summary::before{
-	content: '+';
-	padding-right: 1rem;
+
+summary {
+  list-style: none;
 }
-details[open]	summary::before{
-	content: '-';
+summary::before {
+  content: "+";
+  padding-right: 1rem;
+}
+details[open] summary::before {
+  content: "-";
 }
 .mate .conteiner input[type="text"],
 .mate .conteiner input[type="email"],
 .mate .conteiner input[type="number"],
-.mate input[type="password"]{
-	display: block;
-	width: 90%;
-	margin-bottom: 20px; 
-	padding:15px 10px;
-	border:none;
-	border-bottom: 2px solid #ccc;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
+.mate input[type="password"] {
+  display: block;
+  width: 90%;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
 .mate .conteiner .infoE input[type="text"],
 .mate .conteiner .infoE input[type="email"],
 .mate .conteiner .infoE input[type="number"],
-.mate .conteiner .infoE input[type="password"]{
-	display: block;
-	width: 50%;
-	margin-bottom: 20px;
-	padding: 15px 10px;
-	border:none;
-	border-bottom: 2px solid #ccc;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
+.mate .conteiner .infoE input[type="password"] {
+  display: block;
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
-.mate .conteiner .time input[type="text"]{
-	display:flex;
-	width: 80%;
-	margin-bottom: 20px;
-	padding: 15px 10px;
-	border:none;
-	border-bottom: 2px solid #ccc;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
-
-}
-
-.content-select select{
-	display: inline-block;
-	width: 60%;
-	cursor: pointer;
-	border: 0.5px solid #18191a;;
-	/*border-color: #226fc1;*/
-	background:white;
-	color:#000000;
-	font-size: 1em;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 10px;
+.mate .conteiner .time input[type="text"] {
+  display: flex;
+  width: 80%;
+  margin-bottom: 20px;
+  padding: 15px 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
 
-.addMateria .timeAdd .content-select-time select{
-	display: inline-block;
-	width: 90%;
-	cursor: pointer;
-	border: 0.5px solid #18191a;;
-	/*border-color: #226fc1;*/
-	background:white;
-	color:#000000;
-	font-size: 1em;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 10px;
+.content-select select {
+  display: inline-block;
+  width: 60%;
+  cursor: pointer;
+  border: 0.5px solid #18191a;
+  /*border-color: #226fc1;*/
+  background: white;
+  color: #000000;
+  font-size: 1em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
 }
-.content-select-time select{
-	display: inline-block;
-	width: 80%;
-	cursor: pointer;
-	border: 0.5px solid #18191a;;
-	/*border-color: #226fc1;*/
-	background:white;
-	color:#000000;
-	font-size: 1em;
-	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-	border-radius: 10px;
+
+.addMateria .timeAdd .content-select-time select {
+  display: inline-block;
+  width: 90%;
+  cursor: pointer;
+  border: 0.5px solid #18191a;
+  /*border-color: #226fc1;*/
+  background: white;
+  color: #000000;
+  font-size: 1em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+}
+.content-select-time select {
+  display: inline-block;
+  width: 80%;
+  cursor: pointer;
+  border: 0.5px solid #18191a;
+  /*border-color: #226fc1;*/
+  background: white;
+  color: #000000;
+  font-size: 1em;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  border-radius: 10px;
 }
 .mate .btn {
-	width: 50%;
-	text-align: center;
-	background: #246eb9;
-	color: #fff;
-	border: none;
-	display: block;
-	padding: 15px 10px;
-	cursor: pointer;
-	border-radius: 0 0 6px 6px;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
+  width: 50%;
+  text-align: center;
+  background: #246eb9;
+  color: #fff;
+  border: none;
+  display: block;
+  padding: 15px 10px;
+  cursor: pointer;
+  border-radius: 0 0 6px 6px;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
 
 .mate .btn:hover {
-	background: #4357ad;
+  background: #4357ad;
 }
-.mate .btn-edith {	
-	width: 10%;
-	text-align: center;
-	background: #67b924;
-	color: #fff;
-	border: none;
-	display: block;
-	padding: 15px 10px;
-	cursor: pointer;
-	border-radius: 6px 6px 6px 6px;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
-
+.mate .btn-edith {
+  width: 10%;
+  text-align: center;
+  background: #67b924;
+  color: #fff;
+  border: none;
+  display: block;
+  padding: 15px 10px;
+  cursor: pointer;
+  border-radius: 6px 6px 6px 6px;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
-.mate .btn-save {	
-	width: 10%;
-	text-align: center;
-	background: #2e24b9;
-	color: #fff;
-	border: none;
-	display: block;
-	padding: 15px 10px;
-	cursor: pointer;
-	border-radius: 6px 6px 6px 6px;
-	font-family: 'Slabo 27px', serif;
-	font-size: 18px;
-
+.mate .btn-save {
+  width: 10%;
+  text-align: center;
+  background: #2e24b9;
+  color: #fff;
+  border: none;
+  display: block;
+  padding: 15px 10px;
+  cursor: pointer;
+  border-radius: 6px 6px 6px 6px;
+  font-family: "Slabo 27px", serif;
+  font-size: 18px;
 }
 .studentInformation table {
-	width: 100%;
-	border-collapse: separate;
-	border-spacing: 2px;
-	background: #000 url("gradient.gif") bottom left repeat-x;
-	color: #fff;
-	text-align: center;
- }
- td, th {
-	background: #fff;
-	color: #000;
- }
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+  background: #000 url("gradient.gif") bottom left repeat-x;
+  color: #fff;
+  text-align: center;
+}
+td,
+th {
+  background: #fff;
+  color: #000;
+}
 footer {
-    color:white;
-    background-color: black;
-    height: 80px;
-    border: 1px solid black;
-    width: 100%;
-    margin: 0px auto 0px auto;
-
+  color: white;
+  background-color: black;
+  height: 80px;
+  border: 1px solid black;
+  width: 100%;
+  margin: 0px auto 0px auto;
 }
