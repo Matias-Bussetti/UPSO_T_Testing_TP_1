@@ -1,6 +1,10 @@
 "use strict";
 
 export class Auth {
+  static getAuthUserInfo() {
+    return JSON.parse(LocalStorageInterface.getCollection("auth"));
+  }
+
   static checkLogin() {
     const auth = LocalStorageInterface.getCollection("auth");
     if (auth.length == 0) {
@@ -41,6 +45,17 @@ export class Auth {
     } else {
       students.list.forEach((student) => {
         if (student.code == username && student.password == password) {
+          LocalStorageInterface.storeCollection(
+            "auth",
+            JSON.stringify({
+              userId: student.id,
+              surName: student.surName,
+              name: student.name,
+              email: student.email,
+              code: student.code,
+              type: "student",
+            })
+          );
           window.location.href = "/student";
           return true;
         }
@@ -225,6 +240,10 @@ export class DomManipulator {
     // Subjects
     this.formSubjectAddEvents();
     this.listSubjectByCloningSubjectDetailElement();
+
+    //Student Side Dashboard
+    this.showPersonalInformation();
+    this.listSubjectsInTableOnStudentDashBoard();
   }
 
   //Students
@@ -487,6 +506,70 @@ export class DomManipulator {
         document
           .getElementById("container-subjects")
           .appendChild(cloneOfSubjectDetailElement);
+      });
+    }
+  }
+
+  //Student Side DashBoard
+  static showPersonalInformation() {
+    var userInfomationName = document.getElementById("user-information-name");
+    var userInfomationSurName = document.getElementById(
+      "user-information-surName"
+    );
+    var userInfomationCode = document.getElementById("user-information-code");
+    var userInfomationEmail = document.getElementById("user-information-email");
+
+    if (
+      userInfomationName &&
+      userInfomationSurName &&
+      userInfomationCode &&
+      userInfomationEmail
+    ) {
+      userInfomationName.innerText = Auth.getAuthUserInfo().name;
+      userInfomationSurName.innerText = Auth.getAuthUserInfo().surName;
+      userInfomationCode.innerText = Auth.getAuthUserInfo().code;
+      userInfomationEmail.innerText = Auth.getAuthUserInfo().email;
+    }
+  }
+
+  //Student Side DashBoard
+  static listSubjectsInTableOnStudentDashBoard() {
+    var tableBodySubjectToEnrol = document.getElementById(
+      "table-body-subject-enrol"
+    );
+
+    if (tableBodySubjectToEnrol) {
+      const subjects = new Subjects();
+
+      subjects.list.forEach((subject) => {
+        var cloneOfSubjectRow = document.getElementById(
+          "to-clone-row-subject-enrol"
+        );
+        cloneOfSubjectRow.removeAttribute("id");
+        cloneOfSubjectRow.removeAttribute("style");
+
+        console.log(cloneOfSubjectRow);
+
+        //Nombre de materia
+        cloneOfSubjectRow.querySelector("td.subject-info-id").innerText =
+          subject.id;
+
+        cloneOfSubjectRow.querySelector("td.subject-info-name").innerText =
+          subject.name;
+
+        cloneOfSubjectRow.querySelector(
+          "td.subject-info-teacherName"
+        ).innerText = subject.teacherName;
+
+        cloneOfSubjectRow.querySelector("td.subject-info-day").innerText =
+          subject.day;
+
+        cloneOfSubjectRow.querySelector(
+          "td.subject-info-schedule"
+        ).innerText = `${subject.hourStart}hrs a ${subject.hourEnd}hrs ${subject.country}`;
+
+        //Agregamos el elemento a el contanedor
+        tableBodySubjectToEnrol.appendChild(cloneOfSubjectRow);
       });
     }
   }
