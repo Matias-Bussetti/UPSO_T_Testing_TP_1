@@ -95,7 +95,7 @@ details[open]	summary::before{
 .mate .conteiner .infoE input[type="text"],
 .mate .conteiner .infoE input[type="email"],
 .mate .conteiner .infoE input[type="number"],
-.mate input[type="password"]{
+.mate .conteiner .infoE input[type="password"]{
 	display: block;
 	width: 50%;
 	margin-bottom: 20px;
@@ -107,7 +107,7 @@ details[open]	summary::before{
 }
 .mate .conteiner .time input[type="text"]{
 	display:flex;
-	width: 50%;
+	width: 80%;
 	margin-bottom: 20px;
 	padding: 15px 10px;
 	border:none;
@@ -116,12 +116,10 @@ details[open]	summary::before{
 	font-size: 18px;
 
 }
-.time{
-	background-color: #4d4a49;
-}
-  .content-select select{
+
+.content-select select{
 	display: inline-block;
-	width: 90%;
+	width: 60%;
 	cursor: pointer;
 	border: 0.5px solid #18191a;;
 	/*border-color: #226fc1;*/
@@ -146,7 +144,7 @@ details[open]	summary::before{
 }
 .content-select-time select{
 	display: inline-block;
-	width: 20%;
+	width: 80%;
 	cursor: pointer;
 	border: 0.5px solid #18191a;;
 	/*border-color: #226fc1;*/
@@ -156,8 +154,7 @@ details[open]	summary::before{
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	border-radius: 10px;
 }
-  
-  .mate .btn {
+.mate .btn {
 	width: 50%;
 	text-align: center;
 	background: #246eb9;
@@ -200,5 +197,26 @@ details[open]	summary::before{
 	border-radius: 6px 6px 6px 6px;
 	font-family: 'Slabo 27px', serif;
 	font-size: 18px;
+
+}
+.studentInformation table {
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 2px;
+	background: #000 url("gradient.gif") bottom left repeat-x;
+	color: #fff;
+	text-align: center;
+ }
+ td, th {
+	background: #fff;
+	color: #000;
+ }
+footer {
+    color:white;
+    background-color: black;
+    height: 80px;
+    border: 1px solid black;
+    width: 100%;
+    margin: 0px auto 0px auto;
 
 }

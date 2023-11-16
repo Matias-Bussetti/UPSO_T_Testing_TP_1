@@ -35,8 +35,8 @@ body {
 .menu li a:hover{
     background: #4d4a49;
 }
-.conteiner{
 
+.conteiner{
     list-style: none;
     padding: 0px;
     width: 90%;
@@ -171,7 +171,7 @@ details[open]	summary::before{
 	table {
 		width: 100%;
 		border-collapse: separate;
-		border-spacing: 5px;
+		border-spacing: 3px;
 		background: #000 url("gradient.gif") bottom left repeat-x;
 		color: #fff;
 		text-align: center;
@@ -180,4 +180,12 @@ details[open]	summary::before{
 		background: #fff;
 		color: #000;
 	 }
+	 footer {
+		color:white;
+		background-color: black;
+		height: 80px;
+		border: 1px solid black;
+		width: 100%;
+		margin: 0px auto 0px auto;
 	
+	}
