@@ -33,8 +33,6 @@ export class Auth {
   static login(username, password) {
     const students = new Students();
 
-    console.log(students);
-
     if (username == "admin" && password == "c0ntr4s3ñ4") {
       LocalStorageInterface.storeCollection(
         "auth",
@@ -45,6 +43,7 @@ export class Auth {
     } else {
       students.list.forEach((student) => {
         if (student.code == username && student.password == password) {
+          console.log(students);
           LocalStorageInterface.storeCollection(
             "auth",
             JSON.stringify({
@@ -194,6 +193,10 @@ export class Students extends StorageList {
 }
 
 export class Subjects extends StorageList {
+  MSG_USER_ALREADY_ENROLL = "Usuario ya inscripto en la Materia";
+  MSG_USER_ENROLL_IN_SUBJECT = "Inscripción exitosamente en la Materia";
+  MSG_USER_UNENROLL_IN_SUBJECT = "Desinscripción exitosamente en la Materia";
+
   constructor() {
     super("subjects");
   }
@@ -218,6 +221,49 @@ export class Subjects extends StorageList {
     this.list.map((subject) => {
       if (parseInt(subject.id) == parseInt(id)) {
         subject[attribute] = value;
+      }
+      return subject;
+    });
+    this.saveListInStorage();
+  }
+
+  isStudentEnrollInSubject(subjectId, userId) {
+    return (
+      this.list
+        .filter((subject) => subject.id == subjectId)[0]
+        ["enrolledStudents"].filter((student) => student.userId == userId)
+        .length > 0
+    );
+  }
+
+  enrollStudentInSubject(id, userData) {
+    this.list.map((subject) => {
+      if (parseInt(subject.id) == parseInt(id)) {
+        if (this.isStudentEnrollInSubject(subject.id, userData.userId)) {
+          alert(this.MSG_USER_ALREADY_ENROLL);
+          return subject;
+        }
+
+        alert(this.MSG_USER_ENROLL_IN_SUBJECT);
+        subject["enrolledStudents"].push(userData);
+        return subject;
+      }
+      return subject;
+    });
+    this.saveListInStorage();
+  }
+
+  unEnrollStudentInSubject(id, userData) {
+    this.list.map((subject) => {
+      if (parseInt(subject.id) == parseInt(id)) {
+        if (this.isStudentEnrollInSubject(subject.id, userData.userId)) {
+          alert(this.MSG_USER_UNENROLL_IN_SUBJECT);
+
+          subject["enrolledStudents"] = subject["enrolledStudents"].filter(
+            (student) => student.userId != userData.userId
+          );
+          return subject;
+        }
       }
       return subject;
     });
@@ -413,6 +459,7 @@ export class DomManipulator {
           data[input.name] =
             input.type == "checkbox" ? input.checked : input.value;
         });
+        data.enrolledStudents = [];
 
         const subjects = new Subjects();
 
@@ -426,6 +473,7 @@ export class DomManipulator {
 
         //this.listStudentsFromStorage();
         formSubject.reset();
+        this.listSubjectByCloningSubjectDetailElement();
       };
     }
   }
@@ -500,7 +548,28 @@ export class DomManipulator {
         selectTeacherHabilitation.value = subject.teacherHabilitation;
         selectTeacherHabilitation.oninput = (e) => updateFieldInSubject(e);
 
-        console.log(cloneOfSubjectDetailElement, subject);
+        //Cantidad de Inscriptos
+
+        cloneOfSubjectDetailElement.querySelector(
+          "div.numberRegister"
+        ).innerText = subject.enrolledStudents.length;
+
+        subject.enrolledStudents.forEach((student) => {
+          var row = document.createElement("tr");
+          var tdNull = document.createElement("td");
+          var tdName = document.createElement("td");
+          tdName.innerText = student.name + " " + student.surName;
+          var tdEmail = document.createElement("td");
+          tdEmail.innerText = student.email;
+
+          row.appendChild(tdNull);
+          row.appendChild(tdName);
+          row.appendChild(tdEmail);
+
+          cloneOfSubjectDetailElement
+            .querySelector("table>tbody")
+            .appendChild(row);
+        });
 
         //Agregamos el elemento a el contanedor
         document
@@ -548,8 +617,6 @@ export class DomManipulator {
         cloneOfSubjectRow.removeAttribute("id");
         cloneOfSubjectRow.removeAttribute("style");
 
-        console.log(cloneOfSubjectRow);
-
         //Nombre de materia
         cloneOfSubjectRow.querySelector("td.subject-info-id").innerText =
           subject.id;
@@ -567,6 +634,34 @@ export class DomManipulator {
         cloneOfSubjectRow.querySelector(
           "td.subject-info-schedule"
         ).innerText = `${subject.hourStart}hrs a ${subject.hourEnd}hrs ${subject.country}`;
+
+        const formEnroll = cloneOfSubjectRow.querySelector("form");
+        const inputsEnroll = cloneOfSubjectRow.querySelectorAll(
+          'input[type="radio"]'
+        );
+
+        formEnroll.enroll.value = subjects.isStudentEnrollInSubject(
+          subject.id,
+          Auth.getAuthUserInfo().userId
+        );
+
+        inputsEnroll.forEach(
+          (input) =>
+            (input.onclick = (e) => {
+              const userWantToEnrol = JSON.parse(formEnroll.enroll.value);
+              if (userWantToEnrol) {
+                subjects.enrollStudentInSubject(
+                  subject.id,
+                  Auth.getAuthUserInfo()
+                );
+              } else {
+                subjects.unEnrollStudentInSubject(
+                  subject.id,
+                  Auth.getAuthUserInfo()
+                );
+              }
+            })
+        );
 
         //Agregamos el elemento a el contanedor
         tableBodySubjectToEnrol.appendChild(cloneOfSubjectRow);
