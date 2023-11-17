@@ -1,3 +1,5 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
 	margin: 0;
 	padding: 0;
@@ -8,7 +10,7 @@
 
 body {
 	background: rgb(37, 37, 37);
-	font-family: 'Slabo 27px', serif;
+    font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 }
 .menu{
@@ -51,4 +53,42 @@ body {
 h1{
     text-align: center;
     color: white;
+    font-family: 'Roboto';
 }
+.informactionIam{
+    background-color: azure;
+    padding: 20px;
+}
+table {
+    width: 100%;
+    border-color: #000000;
+    border-collapse: separate;
+    border-spacing: 2px;
+    background: #ffffff url("gradient.gif") bottom left repeat-x;
+    color: #000000;
+    text-align: center;
+  }
+td,
+th {
+  background: #ffffff;
+  color: #000;
+}
+  details {
+    background: #afa3a3;
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  summary {
+    list-style: none;
+  }
+  summary::before {
+    content: "+";
+    padding-right: 1rem;
+  }
+  details[open] summary::before {
+    content: "-";
+  }
+

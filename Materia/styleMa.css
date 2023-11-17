@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,7 @@
 
 body {
   background: rgb(37, 37, 37);
-  font-family: "Slabo 27px", serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
 .menu {

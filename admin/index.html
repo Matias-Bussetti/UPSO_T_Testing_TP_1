@@ -26,11 +26,11 @@
         <details>
         <summary>Crear estudiante</summary>
         <div class="conteinerInputs">
-          <input placeholder="id" type="hidden" name="id" value="-1" />
-          <input placeholder="Nombre" type="text" name="name" />
-          <input placeholder="Apellido" type="text" name="surName" />
+          <input placeholder="id" type="hidden" name="id" value="-1" required/>
+          <input placeholder="Nombre" type="text" name="name" required />
+          <input placeholder="Apellido" type="text" name="surName" required/>
           <h4>Fecha de nacimiento</h4>
-          <input type="date" name="date" />
+          <input type="date" name="date" required/>
           <br />
           <br />
           <div class="content-select">
@@ -272,12 +272,12 @@
             </select>
           </div>
 
-          <input placeholder="DNI" type="number" name="dni" />
+          <input placeholder="DNI" type="number" name="dni" required />
           <label for="form-student-canEnrol">canEnrol</label>
-          <input id="form-student-canEnrol" type="checkbox" class="check" name="canEnrol" />
-          <input placeholder="Email" type="email" name="email" />
-          <input placeholder="code"  type="text" name="code" />
-          <input placeholder="password" type="text" name="password" />
+          <input id="form-student-canEnrol" type="checkbox" class="check" name="canEnrol"  />
+          <input placeholder="Email" type="email" name="email" required />
+          <input placeholder="code"  type="text" name="code" required />
+          <input placeholder="password" type="text" name="password" required />
           <button type="submit" class="btn">Agregar</button>
         </details>
         </div>

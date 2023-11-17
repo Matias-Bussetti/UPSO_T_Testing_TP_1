@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styleStu.css" />
     <link rel="icon" href="img/user-manage_114453.ico" />
-    <title>Document</title>
+    <title>Alumnos</title>
   </head>
 
   <body>
@@ -22,39 +22,50 @@
       <h1>Alumnos</h1>
       <!-- Se tiene que visualizar el nombre, apellido, mail, codigo del cuatrimetres -->
       <div class="informactionIam">
-        <span id="user-information-name"></span>
-        <span id="user-information-surName"></span>
-        <span id="user-information-email"></span>
-        <span id="user-information-code"></span>
+        <h3>Informacion del Alumno</h3>
+          <table b>
+          <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Email</th>
+            <th>Code</th>
+          </tr>
+          <tr>
+            <td><span id="user-information-name"></span></td>
+            <td><span id="user-information-surName"></span></td>
+            <td><span id="user-information-email"></span></td>
+            <td> <span id="user-information-code"></span></td>
+          </tr>
+        </table>    
       </div>
-      <!--Materias que tiene inscripto   -->
-      <div class="enrolledSubjescts">
+      <!-- <div class="enrolledSubjescts">
+        Materias Inscriptas 
         <table border="1">
           <tr>
-            <td></td>
+            <th></th>
             <th>Nombre</th>
             <th>Profesor</th>
             <th>Mail catedra</th>
             <th>Dia</th>
             <th>Horario</th>
           </tr>
-          <tr>
+          <!-- <tr>
             <!-- Ejemplo -->
             <!-- Aca Iria el numero de materia -->
-            <th></th>
+            <!-- <td></td> -->
             <!-- Aca va el nombre materia -->
-            <td></td>
+            <!-- <td></td> -->
             <!-- nombre profesor -->
-            <td>martita</td>
+            <!-- <td>martita</td> -->
             <!-- Aca va el email  -->
-            <td>arturito@gmail.com</td>
+            <!-- <td>arturito@gmail.com</td> -->
             <!-- dia -->
-            <td>d</td>
+            <!-- <td>d</td> -->
             <!-- horario -->
-            <td>19 hs 22 ARG</td>
-          </tr>
-        </table>
-      </div>
+            <!-- <td>19 hs 22 ARG</td> -->
+          <!-- </tr>
+        </table> -->
+      <!-- </div> -->
       <!-- Inscribirse  a una materia -->
       <div class="addMateria">
         <!--Agregar Materia inscripta  -->
@@ -68,7 +79,7 @@
                 <th>Profesor</th>
                 <th>Día</th>
                 <th>Horario</th>
-                <th>Incrito</th>
+                <th>Inscripto</th>
               </tr>
             </thead>
             <tbody id="table-body-subject-enrol">
