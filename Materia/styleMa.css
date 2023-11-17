@@ -13,6 +13,15 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
+.loguito{
+	width: 100%;
+	height: 60px;
+	color: white;
+}
+img{
+	width: 200px;
+	/* float: right; */
+}
 .menu {
   background: #000000;
   list-style: none;

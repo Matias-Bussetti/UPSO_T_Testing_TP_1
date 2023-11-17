@@ -19,6 +19,7 @@ body {
     width: 90%;
     max-width: 1000px;
     margin: 20px auto;
+	
 }
 
 .menu li {
@@ -190,3 +191,12 @@ details[open]	summary::before{
 		margin: 0px auto 0px auto;
 	
 	}
+	.loguito{
+	width: 100%;
+	height: 60px;
+	color: white;
+}
+img{
+	width: 200px;
+	/* float: right; */
+}
