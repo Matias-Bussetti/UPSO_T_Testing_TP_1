@@ -38,8 +38,8 @@ function validateForm(e) {
   //reinicio el error para que inicie sin mensaje
   error.innerHTML = "";
 
-  //validateName(e);
-  //validatePassword(e);
+  validateName(e);
+  validatePassword(e);
 
   //Validar contraseña o username
   if (Auth.login(nameUs.value, password.value)) {

@@ -37,6 +37,15 @@
           <br />
           <br />
           <div class="content-select">
+            <label>Código Cuatrimetre</label>
+            <select name="codeQuadrimeter">
+              <option value="1C23">1C23</option>
+              <option value="1C24">1C24</option>
+              <option value="2C23">2C23</option>
+              <option value="2C24">2C24</option>
+            </select>
+            </div>
+          <div class="content-select">
             <select name="country">
               <option value="AF">Afganistán</option>
               <option value="AL">Albania</option>
@@ -276,8 +285,8 @@
           </div>
 
           <input placeholder="DNI" type="number" name="dni" required />
-          <label for="form-student-canEnrol">canEnrol</label>
-          <input id="form-student-canEnrol" type="checkbox" class="check" name="canEnrol"  />
+          <!-- <label for="form-student-canEnrol">canEnrol</label> -->
+          <!-- <input id="form-student-canEnrol" type="checkbox" class="check" name="canEnrol"  /> -->
           <input placeholder="Email" type="email" name="email" required />
           <input placeholder="code"  type="text" name="code" required />
           <input placeholder="password" type="text" name="password" required />
@@ -301,8 +310,9 @@
             <th>DNI</th>
             <th>Puede Inscribirse</th>
             <th>Email</th>
-            <th>Code</th>
-            <th>Password</th>
+            <th>Legajo</th>
+            <th>Código de Cuatrimestre</th>
+            <th>Contraseña</th>
             <th>Acciones</th>
           </tr>
         </thead>
