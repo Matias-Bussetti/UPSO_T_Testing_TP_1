@@ -51,7 +51,10 @@ export class Auth {
               surName: student.surName,
               name: student.name,
               email: student.email,
+              date: student.date,
+              country: student.country,
               code: student.code,
+              codeQuadrimeter: student.codeQuadrimeter,
               type: "student",
             })
           );
@@ -171,24 +174,61 @@ class StorageList {
 }
 
 export class Students extends StorageList {
+  MSG_USER_FULL = "No se pueden agregar más de 10 alumnos.";
+  MSG_USER_CODE_EXIST = "Código de alumnos ya existe.";
+  MSG_USER_DNI_EXIST = "Alumnos con mismo DNI ya existe.";
+  MSG_USER_CREATED_SUCCESS = "Alumnos creado exitosamente.";
+  MSG_USER_UPDATED_SUCCESS = "Alumnos actualizado exitosamente.";
+  MSG_USER_DELETED_SUCCESS = "Alumnos eliminado exitosamente.";
+
   constructor() {
     super("students");
   }
 
   addStudent(data) {
-    this.addElementInList(data);
+    // TODO: VALIDAR SI CODIGO IDENTICO
+    // TODO: VALIDAR DNI IDENTICO
+    // TODO: VALIDAR CANTIDAD = 10
     // TODO: Validad si el código de usuario existe
+    if (this.list.length >= 10) {
+      throw new Error(this.MSG_USER_FULL);
+    }
+
+    this.list.forEach((student) => {
+      if (student.code == data.code) {
+        throw new Error(this.MSG_USER_CODE_EXIST);
+      }
+      if (student.dni == data.dni) {
+        throw new Error(this.MSG_USER_DNI_EXIST);
+      }
+    });
+
+    this.addElementInList(data);
     this.saveListInStorage();
+    alert(this.MSG_USER_CREATED_SUCCESS);
   }
 
   updateStudent(id, newData) {
+    this.list.forEach((student) => {
+      if (student.id != newData.id) {
+        if (student.code == newData.code) {
+          throw new Error(this.MSG_USER_CODE_EXIST);
+        }
+        if (student.dni == newData.dni) {
+          throw new Error(this.MSG_USER_DNI_EXIST);
+        }
+      }
+    });
+
     this.updateElementInList(id, newData);
     this.saveListInStorage();
+    alert(this.MSG_USER_UPDATED_SUCCESS);
   }
 
   deleteStudent(id) {
     this.deleteElementInList(id);
     this.saveListInStorage();
+    alert(this.MSG_USER_DELETED_SUCCESS);
   }
 }
 
@@ -196,6 +236,13 @@ export class Subjects extends StorageList {
   MSG_USER_ALREADY_ENROLL = "Usuario ya inscripto en la Materia";
   MSG_USER_ENROLL_IN_SUBJECT = "Inscripción exitosamente en la Materia";
   MSG_USER_UNENROLL_IN_SUBJECT = "Desinscripción exitosamente en la Materia";
+  MSG_USER_CANNOT_ENROLL_IN_SUBJECT =
+    "Usted no esta habilitado para inscribirse.";
+  MSG_USER_COUNTRY_NOT_EQUAL_TO_SUBJECT =
+    "El huso horario de donde se dicta la materia no es igual al suyo, contactanos para saber como hacer en estos casos.";
+  MSG_USER_CANNOT_ENROLL_IN_SUBJECT_BECAUSE_LIMIT =
+    "Usted no puede inscribirse ya que llego a su limite.";
+  CODE_QUADRIMETER_NOT_ENABLED = "1C23";
 
   constructor() {
     super("subjects");
@@ -236,12 +283,51 @@ export class Subjects extends StorageList {
     );
   }
 
+  amountStudentEnrollSubjects(userId) {
+    let amount = 0;
+
+    this.list.forEach((subject) => {
+      subject.enrolledStudents.forEach((student) => {
+        if (student.userId == userId) {
+          amount++;
+        }
+      });
+    });
+    return amount;
+  }
+
   enrollStudentInSubject(id, userData) {
+    //TODO comprobar que este  habilitado para insctips
+    //student.codeQuadrimeter != ""
+    if (calculateAge(userData.date) > 35) {
+      if (this.amountStudentEnrollSubjects(userData.userId) >= 6) {
+        throw new Error(this.MSG_USER_CANNOT_ENROLL_IN_SUBJECT_BECAUSE_LIMIT);
+      }
+    } else {
+      if (this.amountStudentEnrollSubjects(userData.userId) >= 4) {
+        throw new Error(this.MSG_USER_CANNOT_ENROLL_IN_SUBJECT_BECAUSE_LIMIT);
+      }
+    }
+
+    if (userData.codeQuadrimeter == this.CODE_QUADRIMETER_NOT_ENABLED) {
+      throw new Error(this.MSG_USER_CANNOT_ENROLL_IN_SUBJECT);
+    }
+
     this.list.map((subject) => {
       if (parseInt(subject.id) == parseInt(id)) {
         if (this.isStudentEnrollInSubject(subject.id, userData.userId)) {
           alert(this.MSG_USER_ALREADY_ENROLL);
           return subject;
+        }
+
+        if (userData.country != subject.country) {
+          alert(
+            this.MSG_USER_COUNTRY_NOT_EQUAL_TO_SUBJECT +
+              "\nTu huso horario: " +
+              userData.country +
+              ", el huso de la materia: " +
+              subject.country
+          );
         }
 
         alert(this.MSG_USER_ENROLL_IN_SUBJECT);
@@ -305,44 +391,22 @@ export class DomManipulator {
             input.type == "checkbox" ? input.checked : input.value;
         });
 
-        console.log(data);
-
         const students = new Students();
 
         // Si el id es -1 significa que no se esta editando un objeto
-        if (formStudent.id.value == "-1") {
-          data.id = Math.floor(Math.random() * 100000 + 1);
-          students.addStudent(data);
-        } else {
-          students.updateStudent(data.id, data);
+        try {
+          if (formStudent.id.value == "-1") {
+            data.id = Math.floor(Math.random() * 100000 + 1);
+            students.addStudent(data);
+          } else {
+            students.updateStudent(data.id, data);
+          }
+          this.listStudentsFromStorage();
+          formStudent.reset();
+        } catch (error) {
+          alert(error.message);
         }
-
-        this.listStudentsFromStorage();
-        formStudent.reset();
       };
-
-      //Para que no ingresen el mismo code de student
-      /*
-      const students = new Students();
-      //
-      let codes = [];
-      students.list.forEach((student) => {
-        if (student.code) {
-          codes.push(student.code + "$");
-        }
-      });
-
-      //
-      let codePattern = `^(?!${codes.join("|")}).+$`;
-
-      formStudent.code.pattern = codePattern;
-      console.log(formStudent.code);
-
-      formStudent.code.oninvalid = (e) => {
-        if (e.target.validity.patternMismatch) {
-          e.target.setCustomValidity("Ingrese otro código.");
-        }
-      };*/
     }
   }
 
@@ -373,6 +437,7 @@ export class DomManipulator {
           "canEnrol",
           "email",
           "code",
+          "codeQuadrimeter",
           "password",
         ];
 
@@ -382,28 +447,11 @@ export class DomManipulator {
           newTableData.innerText = student[column];
 
           if (column == "canEnrol") {
-            newTableData.innerText = student[column] ? "SI" : "NO";
+            newTableData.innerText =
+              student.codeQuadrimeter != "1C23" ? "SI" : "NO";
           }
 
           if (column == "date") {
-            function calculateAge(birthDate) {
-              // Parse the birthdate string to a Date object
-              var birthDate = new Date(birthDate);
-
-              // Get the current date
-              var currentDate = new Date();
-
-              // Calculate the difference in milliseconds
-              var timeDifference = currentDate - birthDate;
-
-              // Calculate the age in years
-              var age = Math.floor(
-                timeDifference / (365.25 * 24 * 60 * 60 * 1000)
-              );
-
-              return age;
-            }
-
             newTableData.innerText =
               new Date(student.date).toLocaleDateString() +
               " (" +
@@ -506,6 +554,13 @@ export class DomManipulator {
 
   //Subjects
   static listSubjectByCloningSubjectDetailElement() {
+    //Limpiar materias
+    document
+      .querySelectorAll(
+        "div#container-subjects>details:not(#to-clone-subject-present)"
+      )
+      .forEach((e) => e.remove());
+
     var subjectDetailElement = document.getElementById(
       "to-clone-subject-present"
     );
@@ -593,7 +648,7 @@ export class DomManipulator {
           row.appendChild(tdEmail);
 
           cloneOfSubjectDetailElement
-            .querySelector("table>tbody")
+            .querySelector("div.studentInformation>table>tbody")
             .appendChild(row);
         });
 
@@ -636,10 +691,12 @@ export class DomManipulator {
     if (tableBodySubjectToEnrol) {
       const subjects = new Subjects();
 
+      var subjectRowForClone = document.getElementById(
+        "to-clone-row-subject-enrol"
+      );
+
       subjects.list.forEach((subject) => {
-        var cloneOfSubjectRow = document.getElementById(
-          "to-clone-row-subject-enrol"
-        );
+        var cloneOfSubjectRow = subjectRowForClone.cloneNode(true);
         cloneOfSubjectRow.removeAttribute("id");
         cloneOfSubjectRow.removeAttribute("style");
 
@@ -674,17 +731,22 @@ export class DomManipulator {
         inputsEnroll.forEach(
           (input) =>
             (input.onclick = (e) => {
-              const userWantToEnrol = JSON.parse(formEnroll.enroll.value);
-              if (userWantToEnrol) {
-                subjects.enrollStudentInSubject(
-                  subject.id,
-                  Auth.getAuthUserInfo()
-                );
-              } else {
-                subjects.unEnrollStudentInSubject(
-                  subject.id,
-                  Auth.getAuthUserInfo()
-                );
+              try {
+                const userWantToEnrol = JSON.parse(formEnroll.enroll.value);
+                if (userWantToEnrol) {
+                  subjects.enrollStudentInSubject(
+                    subject.id,
+                    Auth.getAuthUserInfo()
+                  );
+                } else {
+                  subjects.unEnrollStudentInSubject(
+                    subject.id,
+                    Auth.getAuthUserInfo()
+                  );
+                }
+              } catch (error) {
+                e.preventDefault();
+                alert(error.message);
               }
             })
         );
@@ -694,4 +756,21 @@ export class DomManipulator {
       });
     }
   }
+}
+
+//Funciones
+function calculateAge(birthDate) {
+  // Parse the birthdate string to a Date object
+  var birthDate = new Date(birthDate);
+
+  // Get the current date
+  var currentDate = new Date();
+
+  // Calculate the difference in milliseconds
+  var timeDifference = currentDate - birthDate;
+
+  // Calculate the age in years
+  var age = Math.floor(timeDifference / (365.25 * 24 * 60 * 60 * 1000));
+
+  return age;
 }
