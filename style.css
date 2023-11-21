@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 * {
   /* background-color: #000; */
   /* color: #fff; */
@@ -11,34 +12,23 @@
 
 body {
   background: rgb(37, 37, 37);
-  font-family: "Slabo 27px", serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
-
 .conteiner {
-  width: 400px;
-  /*margin: 40px auto;*/
-  margin: 40px;
-}
+  list-style: none;
+  padding: 0px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  width: 1000px;
 
-.form .conteiner-inputs {
   padding: 20px;
-  background: #fff;
+  background: #67646461;
   border-radius: 6px 6px 0 0;
 }
-.form input[type="text"],
-.form input[type="password"] {
-  display: block;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 15px 10px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  font-family: "Slabo 27px", serif;
-  font-size: 18px;
-}
-.form .btn {
-  width: 100%;
+a {
+  width: 30%;
   text-align: center;
   background: #246eb9;
   color: #fff;
@@ -51,6 +41,20 @@ body {
   font-size: 18px;
 }
 
-.form .btn:hover {
-  background: #4357ad;
+
+a {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 10px;
+}
+
+ a:hover {
+  background: #4d4a49;
+}
+
+img{
+	width: 400px;
+	padding: 30px;
+  /* float: inline-start; */
 }
