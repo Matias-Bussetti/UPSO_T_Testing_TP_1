@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styleStu.css" />
-    <link rel="icon" href="img/user-manage_114453.ico" />
+    <link rel="stylesheet" href="./../styles/style-student-dashboard.css" />
+    <link rel="icon" href="./../img/user-manage_114453.ico" />
     <title>Alumnos</title>
   </head>
 
   <body>
     <div class="loguito">
-      <img src="../img/Upso_academy.png" alt="logo" >
+      <img src="./../img/Upso_academy.png" alt="logo" />
     </div>
     <nav>
       <ul class="menu">
@@ -26,7 +26,7 @@
       <!-- Se tiene que visualizar el nombre, apellido, mail, codigo del cuatrimetres -->
       <div class="informactionIam">
         <h3>Informacion del Alumno</h3>
-          <table b>
+        <table b>
           <tr>
             <th>Nombre</th>
             <th>Apellido</th>
@@ -37,9 +37,9 @@
             <td><span id="user-information-name"></span></td>
             <td><span id="user-information-surName"></span></td>
             <td><span id="user-information-email"></span></td>
-            <td> <span id="user-information-code"></span></td>
+            <td><span id="user-information-code"></span></td>
           </tr>
-        </table>    
+        </table>
       </div>
       <!-- <div class="enrolledSubjescts">
         Materias Inscriptas 
@@ -54,19 +54,19 @@
           </tr>
           <!-- <tr>
             <!-- Ejemplo -->
-            <!-- Aca Iria el numero de materia -->
-            <!-- <td></td> -->
-            <!-- Aca va el nombre materia -->
-            <!-- <td></td> -->
-            <!-- nombre profesor -->
-            <!-- <td>martita</td> -->
-            <!-- Aca va el email  -->
-            <!-- <td>arturito@gmail.com</td> -->
-            <!-- dia -->
-            <!-- <td>d</td> -->
-            <!-- horario -->
-            <!-- <td>19 hs 22 ARG</td> -->
-          <!-- </tr>
+      <!-- Aca Iria el numero de materia -->
+      <!-- <td></td> -->
+      <!-- Aca va el nombre materia -->
+      <!-- <td></td> -->
+      <!-- nombre profesor -->
+      <!-- <td>martita</td> -->
+      <!-- Aca va el email  -->
+      <!-- <td>arturito@gmail.com</td> -->
+      <!-- dia -->
+      <!-- <td>d</td> -->
+      <!-- horario -->
+      <!-- <td>19 hs 22 ARG</td> -->
+      <!-- </tr>
         </table> -->
       <!-- </div> -->
       <!-- Inscribirse  a una materia -->
@@ -114,7 +114,13 @@
         </details>
       </div>
     </div>
-    <script type="module" src="./../auth.js"></script>
-    <script type="module" src="app.js"></script>
+    <script type="module">
+      import { DomManipulator } from "./../src/DomManipulator.js";
+
+      DomManipulator.moduleStudentDashboard();
+      //       moduleAdminSubjects
+      // moduleAdminStudents
+      // moduleStudentDashboard
+    </script>
   </body>
 </html>

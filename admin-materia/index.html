@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Materias</title>
-    <link rel="stylesheet" href="styleMa.css" />
-    <link rel="icon" href="img/file_114448.ico" />
+    <link rel="stylesheet" href="./../styles/style-materia.css" />
+    <link rel="icon" href="./../img/file_114448.ico" />
   </head>
   <html>
     <body>
       <div class="loguito">
-        <img src="../img/Upso_academy.png" alt="logo" >
+        <img src="./../img/Upso_academy.png" alt="logo" />
       </div>
       <nav>
         <ul class="menu">
-          <li><a href="../admin/">Alta de alumnos</a></li>
-          <li><a href="/materia">Materias</a></li>
+          <li><a href="./../admin-student/">Alta de alumnos</a></li>
+          <li><a href="./../admin-materia/">Materias</a></li>
           <li><a class="btn-selector-logout" href="#">Cerrar Sesion</a></li>
         </ul>
       </nav>
@@ -630,14 +630,14 @@
                 </thead>
                 <tbody></tbody>
                 <!-- Ejemplo -->
-                 <tr> 
-                <!-- Aca Iria el numero en la lista que es ese alumno -->
-                <!-- <th>1</th> -->
-                <!-- Aca va el nombre y apellido -->
-                <!-- <td>Aruturito Esteban quito</td> -->
-                <!-- Aca va el email  -->
-                <!-- <td>arturito@gmail.com</td> -->
-               </tr>
+                <tr>
+                  <!-- Aca Iria el numero en la lista que es ese alumno -->
+                  <!-- <th>1</th> -->
+                  <!-- Aca va el nombre y apellido -->
+                  <!-- <td>Aruturito Esteban quito</td> -->
+                  <!-- Aca va el email  -->
+                  <!-- <td>arturito@gmail.com</td> -->
+                </tr>
               </table>
             </div>
           </details>
@@ -650,9 +650,10 @@
         <h6>Beltran Niz Aylen</h6>
       </footer>
 
-      <script type="module" src="./../auth.js"></script>
-
-      <script type="module" src="./app.js"></script>
+      <script type="module">
+        import { DomManipulator } from "./../src/DomManipulator.js";
+        DomManipulator.moduleAdminSubjects();
+      </script>
     </body>
   </html>
 </html>

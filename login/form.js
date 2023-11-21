@@ -1,5 +1,4 @@
-import { Auth } from "../app.js";
-
+import { Auth } from "./../src/Auth.js";
 //para hacer verificaciones dentro del formulario
 var form = document.getElementById("form");
 var nameUs = form.name;
