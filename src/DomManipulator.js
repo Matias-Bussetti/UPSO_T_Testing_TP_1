@@ -82,10 +82,11 @@ export class DomManipulator {
         });
       }
     }
-    const calculateAge = (birthDate) =>
-      Math.floor(
-        new Date() - new Date(birthDate) / (365.25 * 24 * 60 * 60 * 1000)
+    const calculateAge = (birthDate) => {
+      return Math.floor(
+        (new Date() - new Date(birthDate)) / (365.25 * 24 * 60 * 60 * 1000)
       );
+    };
 
     this.formStudentAddEvents();
     var tableStudents = document.getElementById("table-students");
